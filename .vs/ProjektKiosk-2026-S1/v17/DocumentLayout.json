@@ -1,0 +1,259 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|d:\\git repositories\\projektkiosk-2026-s1\\assets\\scripts\\ui\\ui_friendshiptab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\ui_friendshiptab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|d:\\git repositories\\projektkiosk-2026-s1\\assets\\scripts\\ui\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|D:\\Git Repositories\\ProjektKiosk-2026-S1\\assets\\resources\\robin.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\resources\\robin.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|D:\\Git Repositories\\ProjektKiosk-2026-S1\\assets\\resources\\amon.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\resources\\amon.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|D:\\Git Repositories\\ProjektKiosk-2026-S1\\assets\\scripts\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|D:\\Git Repositories\\ProjektKiosk-2026-S1\\assets\\scripts\\ssimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ssimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|d:\\git repositories\\projektkiosk-2026-s1\\assets\\scripts\\data classes\\dialoguedaydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data classes\\dialoguedaydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|D:\\Git Repositories\\ProjektKiosk-2026-S1\\assets\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|D:\\Git Repositories\\ProjektKiosk-2026-S1\\assets\\scripts\\data classes\\characterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data classes\\characterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|d:\\git repositories\\projektkiosk-2026-s1\\assets\\scripts\\data classes\\nodedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data classes\\nodedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|d:\\git repositories\\projektkiosk-2026-s1\\assets\\resources\\shaun.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\resources\\shaun.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|D:\\Git Repositories\\ProjektKiosk-2026-S1\\assets\\resources\\jop.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\resources\\jop.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|D:\\Git Repositories\\ProjektKiosk-2026-S1\\assets\\resources\\lily.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\resources\\lily.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|D:\\Git Repositories\\ProjektKiosk-2026-S1\\assets\\scripts\\ui\\ui_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B5B2A39-78D1-1118-7EAA-F3E0BDC8B01B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\ui_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIManager.cs",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\UIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIManager.cs",
+              "ViewState": "AgIAAE4BAAAAAAAAAAAkwIoBAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T11:59:37.968Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DialogueManager.cs",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\DialogueManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DialogueManager.cs",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\DialogueManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DialogueManager.cs",
+              "ViewState": "AgIAAHQBAAAAAAAAAADwv30AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T00:20:05.566Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Robin.txt",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Resources\\Robin.txt",
+              "RelativeDocumentMoniker": "Assets\\Resources\\Robin.txt",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Resources\\Robin.txt",
+              "RelativeToolTip": "Assets\\Resources\\Robin.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-05-26T08:19:54.23Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Amon.txt",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Resources\\Amon.txt",
+              "RelativeDocumentMoniker": "Assets\\Resources\\Amon.txt",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Resources\\Amon.txt",
+              "RelativeToolTip": "Assets\\Resources\\Amon.txt",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAACEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-05-26T08:19:51.919Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UI_FriendshipTab.cs",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\UI\\UI_FriendshipTab.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UI_FriendshipTab.cs",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\UI\\UI_FriendshipTab.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UI_FriendshipTab.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAgwFQAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-05T01:59:29.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\UI\\MainMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\MainMenu.cs",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\UI\\MainMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\MainMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-05T01:33:58.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DialogueDayData.cs",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\Data Classes\\DialogueDayData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data Classes\\DialogueDayData.cs",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\Data Classes\\DialogueDayData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data Classes\\DialogueDayData.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T20:36:57.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NodeData.cs",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\Data Classes\\NodeData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data Classes\\NodeData.cs",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\Data Classes\\NodeData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data Classes\\NodeData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T20:25:42.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UI_ID.cs",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\UI\\UI_ID.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UI_ID.cs",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\UI\\UI_ID.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UI_ID.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T20:17:48.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SSIManager.cs",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\SSIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SSIManager.cs",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\SSIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SSIManager.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAAwHkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T08:35:48.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CharacterData.cs",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\Data Classes\\CharacterData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data Classes\\CharacterData.cs",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Scripts\\Data Classes\\CharacterData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data Classes\\CharacterData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T08:44:17.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Lily.txt",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Resources\\Lily.txt",
+              "RelativeDocumentMoniker": "Assets\\Resources\\Lily.txt",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Resources\\Lily.txt",
+              "RelativeToolTip": "Assets\\Resources\\Lily.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-05-27T00:39:35.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Shaun.txt",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Resources\\Shaun.txt",
+              "RelativeDocumentMoniker": "Assets\\Resources\\Shaun.txt",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Resources\\Shaun.txt",
+              "RelativeToolTip": "Assets\\Resources\\Shaun.txt",
+              "ViewState": "AgIAAF8GAAAAAAAAAAAiwAEHAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-05-27T00:39:42.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Jop.txt",
+              "DocumentMoniker": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Resources\\Jop.txt",
+              "RelativeDocumentMoniker": "Assets\\Resources\\Jop.txt",
+              "ToolTip": "D:\\Git Repositories\\ProjektKiosk-2026-S1\\Assets\\Resources\\Jop.txt",
+              "RelativeToolTip": "Assets\\Resources\\Jop.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-05-27T00:39:43.583Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

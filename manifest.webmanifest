@@ -1,0 +1,15 @@
+{
+    "name": "KioskRebuild",
+    "short_name": "KioskRebuild",
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "background_color": "#231F20",
+    "theme_color": "#000",
+    "description": "Project Kiosk a serious game made by DITLab to educate about Self-Sovereign Identity.",
+    "icons": [{
+      "src": "TemplateData/icons/unity-logo-dark.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }]
+  }
