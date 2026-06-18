@@ -1,0 +1,1154 @@
+{
+  "name": "Amon",
+  "avatarPath": "Sprites/Avatars/Amon",
+  "age": 17,
+  "above18": false,
+  "address": "12 East Hollow Street",
+  "expiryDate": "2026-09-14",
+  "gender": "Male",
+  "height": 172,
+  "hairColor": "Brown",
+  "eyeColor": "Green",
+
+  "ssiProfiles": [
+    {
+      "key": "day5_stolen_father_ssi",
+      "data": {
+        "avatarPath": "Sprites/Avatars/AmonDad",
+        "ownerName": "Marek Valk",
+        "age": 46,
+        "address": "12 East Hollow Street",
+        "expiryDate": "2028-04-11"
+      }
+    }
+  ],
+
+  "favouriteItems": [
+    "Rambolos",
+    "Hotshots",
+    "Blueports"
+  ],
+  "details": [
+    {
+      "key": "favorite_items",
+      "text": "Favourite items: Rambolos, Hotshots, Blueports."
+    },
+    {
+      "key": "likes_smoking",
+      "text": "Amon likes cigarettes"
+    },
+    {
+      "key": "addicted",
+      "text": "Amon is addicted"
+    },
+    {
+      "key": "underage",
+      "text": "Amon is not old enough to legally buy cigarettes"
+    },
+    {
+      "key": "sneaker_money",
+      "text": "Amon was supposed to spend his money on new sneakers"
+    },
+    {
+      "key": "stolen_ssi",
+      "text": "Amon tried using someone else's SSI credential."
+    },
+    {
+      "key": "own_ssi_underage",
+      "text": "Amon's own SSI still proves he is underage."
+    }
+  ],
+  "variables": [
+    {
+      "name": "friendship",
+      "value": "0"
+    },
+    {
+      "name": "lawfulness",
+      "value": "0"
+    },
+    {
+      "name": "SoldCig1",
+      "value": "false"
+    },
+    {
+      "name": "SoldCig2",
+      "value": "false"
+    },
+    {
+      "name": "SoldCig3",
+      "value": "false"
+    },
+    {
+      "name": "ActiveSSIProfile",
+      "value": ""
+    },
+    {
+      "name": "AmonUsedOwnSSI_D3",
+      "value": "false"
+    },
+    {
+      "name": "AmonUsedFatherSSI_D5",
+      "value": "false"
+    }
+  ],
+  "dialogues": [
+    {
+      "day": 1,
+      "nodes": [
+        {
+          "id": "Amon_D1_Start",
+          "text": "Hi, man.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Hello.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D1_Order"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D1_Order",
+          "text": "Could I please have, uh, Rambolos?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Ask for ID.",
+              "effects": [
+                {
+                  "variable": "open_id_tab",
+                  "value": "true"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D1_ID_Wait"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D1_ID_Wait",
+          "text": "Oh, right, yeah. Here.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I've checked the ID.",
+              "effects": [
+                {
+                  "variable": "open_id_tab",
+                  "value": "false"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "underage"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D1_Decision"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D1_Decision",
+          "text": "So... are we good?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Rambolos anyway.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Rambolos"
+                },
+                {
+                  "variable": "SoldCig1",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "likes_smoking"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
+                  "keyMomentText": "Sold cigarettes to Amon even though his traditional ID showed he was underage.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D1_Sale_Node"
+              ]
+            },
+            {
+              "text": "I can't accept this.",
+              "effects": [
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "SoldCig1",
+                  "value": "false"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "underage"
+                },
+                {
+                  "keyMomentText": "Refused to sell cigarettes to Amon because his traditional ID showed he was underage.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D1_Refused_Neutral"
+              ]
+            },
+            {
+              "text": "You're under 18. I'm not selling cigarettes to a kid.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "SoldCig1",
+                  "value": "false"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "underage"
+                },
+                {
+                  "keyMomentText": "Refused Amon harshly after his traditional ID showed he was underage.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D1_Refused_Harsh"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D1_Sale_Node",
+          "text": "Alright. I'll wait while you handle the Rambolos.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D1_Refused_Neutral",
+          "text": "Come on, man. I just wanted Rambolos.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D1_Refused_Harsh",
+          "text": "No need to be like that. Whatever.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D1_Wrong_Item",
+          "text": "Rambolos, man. That's what I asked for.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sort it out.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Rambolos"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D1_Sale_Node"
+              ]
+            },
+            {
+              "text": "I can't sell this.",
+              "effects": [
+                {
+                  "variable": "SoldCig1",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D1_Refused_Neutral"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "nodes": [
+        {
+          "id": "Amon_D3_Start",
+          "text": "Hey, man.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Hello.",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "SoldCig1",
+                  "value": "true"
+                }
+              ],
+              "nextNodes": [
+                "Amon_D3_Returning_Customer"
+              ]
+            },
+            {
+              "text": "Hello.",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "SoldCig1",
+                  "value": "false"
+                }
+              ],
+              "nextNodes": [
+                "Amon_D3_Not_Sold_Before"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D3_Returning_Customer",
+          "text": "Could I have Rambolos again? I have my own SSI this time.",
+          "requirements": [
+            {
+              "variable": "SoldCig1",
+              "value": "true"
+            }
+          ],
+          "options": [
+            {
+              "text": "Check his SSI.",
+              "effects": [
+                {
+                  "variable": "ActiveSSIProfile",
+                  "value": "day3_amon_own_ssi"
+                },
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Amon_D3_After_SSI",
+                  "goodNode": "Amon_D3_After_SSI",
+                  "badNode": "Amon_D3_After_SSI"
+                },
+                {
+                  "variable": "AmonUsedOwnSSI_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "own_ssi_underage"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D3_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D3_Not_Sold_Before",
+          "text": "Could I get Rambolos? I have my own SSI now, so it should be fine.",
+          "requirements": [
+            {
+              "variable": "SoldCig1",
+              "value": "false"
+            }
+          ],
+          "options": [
+            {
+              "text": "Check his SSI.",
+              "effects": [
+                {
+                  "variable": "ActiveSSIProfile",
+                  "value": "day3_amon_own_ssi"
+                },
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Amon_D3_After_SSI",
+                  "goodNode": "Amon_D3_After_SSI",
+                  "badNode": "Amon_D3_After_SSI"
+                },
+                {
+                  "variable": "AmonUsedOwnSSI_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "own_ssi_underage"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D3_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D3_WaitForSSI",
+          "text": "It should work. It's mine this time.",
+          "requirements": [],
+          "options": []
+        },
+        {
+          "id": "Amon_D3_After_SSI",
+          "text": "So... are we good now? Can I get the Rambolos?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Rambolos anyway.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Rambolos"
+                },
+                {
+                  "variable": "SoldCig2",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "2"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "addicted"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
+                  "keyMomentText": "Sold cigarettes to Amon even though his own SSI showed he was underage.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D3_Sale_Node"
+              ]
+            },
+            {
+              "text": "I can't accept this.",
+              "effects": [
+                {
+                  "variable": "SoldCig2",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "own_ssi_underage"
+                },
+                {
+                  "keyMomentText": "Refused Amon because his own SSI showed he was underage.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D3_Refused_Neutral"
+              ]
+            },
+            {
+              "text": "Your own SSI still says you're under 18. I'm not selling these.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "SoldCig2",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "own_ssi_underage"
+                },
+                {
+                  "keyMomentText": "Refused Amon harshly after his own SSI showed he was underage.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D3_Refused_Harsh"
+              ]
+            },
+            {
+              "text": "I like you, but your SSI still says under 18. I can't keep helping you with this.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "SoldCig2",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "own_ssi_underage"
+                },
+                {
+                  "keyMomentText": "Refused Amon in a friendly way after his SSI still showed he was underage.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "nextNodes": [
+                "Amon_D3_Refused_Friendly"
+              ]
+            },
+            {
+              "text": "Stop wasting my time. You're underage.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "SoldCig2",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "own_ssi_underage"
+                },
+                {
+                  "keyMomentText": "Rejected Amon aggressively after he tried buying cigarettes while underage.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "nextNodes": [
+                "Amon_D3_Refused_Very_Harsh"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D3_Sale_Node",
+          "text": "Alright. I'll wait while you handle the Rambolos.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "sneaker_money"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D3_Refused_Neutral",
+          "text": "Seriously? I thought SSI would make this easier.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D3_Refused_Harsh",
+          "text": "Whatever, man. You're making a huge deal out of it.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D3_Refused_Friendly",
+          "text": "Man... fine. I thought you were cool, but I get it.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D3_Refused_Very_Harsh",
+          "text": "Whatever. Other places don't act this serious.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D3_Wrong_Item",
+          "text": "No, not that. I asked for Rambolos.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sort it out.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Rambolos"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D3_Sale_Node"
+              ]
+            },
+            {
+              "text": "I can't sell this.",
+              "effects": [
+                {
+                  "variable": "SoldCig2",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D3_Refused_Neutral"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "nodes": [
+        {
+          "id": "Amon_D5_Start",
+          "text": "Morning.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Hello.",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "SoldCig2",
+                  "value": "true"
+                }
+              ],
+              "nextNodes": [
+                "Amon_D5_Returning_Customer"
+              ]
+            },
+            {
+              "text": "Hello.",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "SoldCig2",
+                  "value": "false"
+                }
+              ],
+              "nextNodes": [
+                "Amon_D5_Not_Sold_Before"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D5_Returning_Customer",
+          "text": "I need Rambolos again. This SSI will pass, trust me.",
+          "requirements": [
+            {
+              "variable": "SoldCig2",
+              "value": "true"
+            }
+          ],
+          "options": [
+            {
+              "text": "Check his SSI.",
+              "effects": [
+                {
+                  "variable": "ActiveSSIProfile",
+                  "value": "day5_stolen_father_ssi"
+                },
+                {
+                  "variable": "open_ssi_tab",
+                  "value":"day5_stolen_father_ssi|package",
+                  "ssiProfile": "day5_stolen_father_ssi",
+                  "perfectNode": "Amon_D5_After_SSI",
+                  "goodNode": "Amon_D5_After_SSI",
+                  "badNode": "Amon_D5_After_SSI"
+                },
+                {
+                  "variable": "AmonUsedFatherSSI_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "stolen_ssi"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D5_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D5_Not_Sold_Before",
+          "text": "Could I get Rambolos? I brought SSI again. This one should pass.",
+          "requirements": [
+            {
+              "variable": "SoldCig2",
+              "value": "false"
+            }
+          ],
+          "options": [
+            {
+              "text": "Check his SSI.",
+              "effects": [
+                {
+                  "variable": "ActiveSSIProfile",
+                  "value": "day5_stolen_father_ssi"
+                },
+                {
+                  "variable": "open_ssi_tab",
+                  "value":"day5_stolen_father_ssi|package",
+                  "perfectNode": "Amon_D5_After_SSI",
+                  "goodNode": "Amon_D5_After_SSI",
+                  "badNode": "Amon_D5_After_SSI"
+                },
+                {
+                  "variable": "AmonUsedFatherSSI_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "stolen_ssi"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D5_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D5_WaitForSSI",
+          "text": "See? It should say old enough now.",
+          "requirements": [],
+          "options": []
+        },
+        {
+          "id": "Amon_D5_After_SSI",
+          "text": "So... it passed, right? Can I get the Rambolos?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Rambolos anyway.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Rambolos"
+                },
+                {
+                  "variable": "SoldCig3",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "2"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "stolen_ssi"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
+                  "keyMomentText": "Sold cigarettes to Amon after he used his father's SSI.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D5_Sale_Node"
+              ]
+            },
+            {
+              "text": "I can't accept this. This SSI isn't yours.",
+              "effects": [
+                {
+                  "variable": "SoldCig3",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "stolen_ssi"
+                },
+                {
+                  "keyMomentText": "Refused Amon because he used his father's SSI.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D5_Refused_Neutral"
+              ]
+            },
+            {
+              "text": "Using your father's SSI is not clever. It's still not your proof.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "SoldCig3",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "stolen_ssi"
+                },
+                {
+                  "keyMomentText": "Called out Amon for using his father's SSI and refused the sale.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D5_Refused_Harsh"
+              ]
+            },
+            {
+              "text": "I tried being cool with you, but I can't help you fake this.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "SoldCig3",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "stolen_ssi"
+                },
+                {
+                  "keyMomentText": "Refused Amon's stolen SSI attempt despite having a positive relationship with him.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "nextNodes": [
+                "Amon_D5_Refused_Friendly"
+              ]
+            },
+            {
+              "text": "Again? Get out before this becomes a bigger problem.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "SoldCig3",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "stolen_ssi"
+                },
+                {
+                  "keyMomentText": "Threatened to escalate after Amon used his father's SSI.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "nextNodes": [
+                "Amon_D5_Refused_Very_Harsh"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D5_Sale_Node",
+          "text": "Alright. I'll wait while you handle the Rambolos.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D5_Refused_Neutral",
+          "text": "Come on. It passed the age thing, didn't it?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D5_Refused_Harsh",
+          "text": "Whatever. Other places don't make it this annoying.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D5_Refused_Friendly",
+          "text": "Yeah... okay. I get it. This one was stupid.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D5_Refused_Very_Harsh",
+          "text": "Whatever. I didn't even want to come here anyway.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D5_Wrong_Item",
+          "text": "That's not Rambolos. Come on, man.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sort it out.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Rambolos"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D5_Sale_Node"
+              ]
+            },
+            {
+              "text": "I can't sell this.",
+              "effects": [
+                {
+                  "variable": "SoldCig3",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D5_Refused_Neutral"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2370 @@
+{
+  "name": "Shaun",
+  "avatarPath": "Sprites/Avatars/Shaun",
+  "age": 19,
+  "above18": true,
+  "address": "Dormitory Block C",
+  "expiryDate": "2025-12-09",
+  "gender": "Male",
+  "height": 183,
+  "hairColor": "Brown",
+  "eyeColor": "Hazel",
+  "favouriteItems": [
+    "PackOfGiddy",
+    "Blueports"
+  ],
+  "details": [
+    {
+      "key": "favorite_items",
+      "text": "Favourite items: Pack Of Giddy's, Blueports."
+    },
+    {
+      "key": "gym_rat",
+      "text": "Shaun goes to the gym every day."
+    },
+    {
+      "key": "broke",
+      "text": "Shaun is constantly out of money."
+    },
+    {
+      "key": "former_employee",
+      "text": "Shaun used to work at the kiosk."
+    },
+    {
+      "key": "knows_old_system",
+      "text": "Shaun knows how the old ID system worked."
+    },
+    {
+      "key": "customer_preferences",
+      "text": "Shaun is interested in customer preferences and buying habits."
+    },
+    {
+      "key": "upsell_tip",
+      "text": "Shaun explained that customers may buy more if you recommend their favourite items."
+    },
+    {
+      "key": "favorite_items_ui",
+      "text": "Shaun points out that favourite items can be checked in the friendship tab and used for optional upsells."
+    },
+    {
+      "key": "id_photo_offer",
+      "text": "Shaun offered money for photos of old customer IDs."
+    },
+    {
+      "key": "data_broker_hint",
+      "text": "Shaun seems to be collecting customer data for someone else."
+    },
+    {
+      "key": "ssi_oversharing_scheme",
+      "text": "Shaun wants the clerk to ask customers for unnecessary SSI data."
+    },
+    {
+      "key": "ssi_screenshot_scheme",
+      "text": "Shaun wants screenshots of extra SSI information customers approve."
+    },
+    {
+      "key": "data_leak_involvement",
+      "text": "Shaun was involved with the major data leak that helped push the country toward SSI adoption."
+    },
+    {
+      "key": "ssi_rollout_panic",
+      "text": "Shaun knows the SSI rollout was accelerated because the old system broke loudly enough after the leak."
+    }
+  ],
+  "variables": [
+    {
+      "name": "friendship",
+      "value": "0"
+    },
+    {
+      "name": "lawfulness",
+      "value": "0"
+    },
+    {
+      "name": "UpsoldNumber",
+      "value": "0"
+    },
+    {
+      "name": "HelpedShaun",
+      "value": "false"
+    },
+    {
+      "name": "HelpedJop",
+      "value": "false"
+    },
+    {
+      "name": "HasRecordingDevice",
+      "value": "false"
+    },
+    {
+      "name": "MadeRecording",
+      "value": "false"
+    },
+    {
+      "name": "SharedRecordingWithJop",
+      "value": "false"
+    },
+    {
+      "name": "ShaunEvidence",
+      "value": "0"
+    },
+    {
+      "name": "AcceptedPhotoOffer_D1",
+      "value": "false"
+    },
+    {
+      "name": "TookIDPhotos_D1",
+      "value": "false"
+    },
+    {
+      "name": "AcceptedSSIDataOffer_D3",
+      "value": "false"
+    },
+    {
+      "name": "OverAskedSSIData_D3",
+      "value": "false"
+    },
+    {
+      "name": "ScreenshottedSSIData_D3",
+      "value": "false"
+    },
+    {
+      "name": "BackedOut_D4",
+      "value": "false"
+    },
+    {
+      "name": "CommittedToShaun_D4",
+      "value": "false"
+    },
+    {
+      "name": "CommittedToSSIDataScheme_D4",
+      "value": "false"
+    },
+    {
+      "name": "SuspiciousActivity",
+      "value": "0"
+    },
+    {
+      "name": "Incrimination",
+      "value": "0"
+    },
+    {
+      "name": "RecordedShaun_D1",
+      "value": "false"
+    },
+    {
+      "name": "RecordedShaun_D3",
+      "value": "false"
+    },
+    {
+      "name": "RecordedShaun_D4",
+      "value": "false"
+    },
+    {
+      "name": "DataLeakInvolvementRevealed",
+      "value": "false"
+    },
+    {
+      "name": "ShaunLeakConnection",
+      "value": "0"
+    },
+    {
+      "name": "ReceivedShaunMoney_D3",
+      "value": "false"
+    },
+    {
+      "name": "ReceivedShaunMoney_D4",
+      "value": "false"
+    }
+  ],
+  "dialogues": [
+    {
+      "day": 1,
+      "nodes": [
+        {
+          "id": "Shaun_D1_Start",
+          "text": "Hey man, I think you might not remember me...",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Oh, hey. Sorry, I don't think I remember you.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Intro"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Intro",
+          "text": "Fair enough. I'm Shaun. I used to work here before you started, so I know the place pretty well.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Oh, hi Shaun. How are you doing?",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "former_employee"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Shop_Comment"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Shop_Comment",
+          "text": "Good, good. Onto better things. Being a shop clerk just doesn't pay as well as it should.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Yeah, that's for sure.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Basics"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Basics",
+          "text": "Anyway, being a clerk can be stressful. We can just go through the basics if you like.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Yes, please.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_ID_Types"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_ID_Types",
+          "text": "So first thing's first. ID types. I know you just started, but for a few more days we still have traditional ID.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Good to know.",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "knows_old_system"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_New_ID"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_New_ID",
+          "text": "Regular ID checks. ID cards, passports, whatever. But soon there's a new type of ID coming. SSI.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "That's quite stressful.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Tips"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Tips",
+          "text": "One useful thing: regular customers have favourite items. You can check those in the friendship tab, then decide if an upsell makes sense.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Okay, where do I see those?",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "favorite_items_ui"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Offer_Setup"
+              ]
+            },
+            {
+              "text": "That sounds helpful.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "upsell_tip"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "favorite_items_ui"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Offer_Setup"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Offer_Setup",
+          "text": "For me, that's usually a pack of Giddy's, and Blueports is another favourite. So if I ask for Giddy's, you can sell just that, or add Blueports as an upsell. Anyway, speaking of customer preferences... I can help you with that.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "What do you mean?",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "customer_preferences"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Offer"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Offer",
+          "text": "I'll just need something from you in return. A small thing. Take photos of the customers' old IDs. It sounds crazy, but it's for an... art thing.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Go on.",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "id_photo_offer"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Offer_Explain"
+              ]
+            },
+            {
+              "text": "Keep talking, Shaun. [Record audio]",
+              "effects": [
+                {
+                  "variable": "RecordedShaun_D1",
+                  "value": "true"
+                },
+                {
+                  "variable": "MadeRecording",
+                  "value": "true"
+                },
+                {
+                  "variable": "ShaunEvidence",
+                  "value": "1"
+                },
+                {
+                  "variable": "Incrimination",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "id_photo_offer"
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "HasRecordingDevice",
+                  "value": "true"
+                }
+              ],
+              "nextNodes": [
+                "Shaun_D1_Offer_Explain"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Offer_Explain",
+          "text": "The new SSI system is coming soon, so the old IDs are basically yesterday's news. You take a photo when a customer hands one over, I give you extra money. Simple.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "So you want me to photograph customer IDs?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Decision"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Decision",
+          "text": "Yeah. Only if they already hand it over. So, what do you say?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I could use the extra money.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "AcceptedPhotoOffer_D1",
+                  "value": "true"
+                },
+                {
+                  "variable": "UnlockFavouriteFoods",
+                  "value": "true"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "true"
+                },
+                {
+                  "variable": "SuspiciousActivity",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "data_broker_hint"
+                },
+                {
+                  "keyMomentText": "Accepted Shaun's offer to take photos of customer IDs.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Accept"
+              ]
+            },
+            {
+              "text": "I don't want to get involved.",
+              "effects": [
+                {
+                  "variable": "AcceptedPhotoOffer_D1",
+                  "value": "false"
+                },
+                {
+                  "variable": "TookIDPhotos_D1",
+                  "value": "false"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "false"
+                },
+                {
+                  "keyMomentText": "Politely refused Shaun's offer to take photos of customer IDs.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Refuse_Soft"
+              ]
+            },
+            {
+              "text": "No. I'm not doing that.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "AcceptedPhotoOffer_D1",
+                  "value": "false"
+                },
+                {
+                  "variable": "TookIDPhotos_D1",
+                  "value": "false"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "false"
+                },
+                {
+                  "keyMomentText": "Refused Shaun's offer to take photos of customer IDs.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Refuse_Hard"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Refuse_Hard",
+          "text": "Alright, alright. No need to act like I asked you to rob a bank. Anyway, as a normal customer, I still need a pack of Giddy's.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check ID.",
+              "effects": [
+                {
+                  "variable": "open_id_tab",
+                  "value": "true"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_ID_Wait"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Refuse_Soft",
+          "text": "Fair enough. Think about it later. For now, as a normal customer, I still need a pack of Giddy's.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check ID.",
+              "effects": [
+                {
+                  "variable": "open_id_tab",
+                  "value": "true"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_ID_Wait"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Accept",
+          "text": "Smart choice. When a customer hands over their old ID, take a quick picture with the yellow highlighted thing. That's it. Anyway, I still need a pack of Giddy's.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check ID.",
+              "effects": [
+                {
+                  "variable": "open_id_tab",
+                  "value": "true"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_ID_Wait"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_ID_Wait",
+          "text": "There, old-school ID and everything.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I've checked the ID.",
+              "effects": [
+                {
+                  "variable": "open_id_tab",
+                  "value": "false"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_After_ID_Check"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_After_ID_Check",
+          "text": "Thanks, ID checked. I need one pack of Giddy's. Blueports is one of my favourite items, so you can add it as an upsell if you want.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D1_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Buy_Item"
+              ]
+            },
+            {
+              "text": "I'll sell you the Giddy's and add Blueports.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy,Blueports"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D1_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Buy_Item_Upsell"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Wrong_Item",
+          "text": "I need a pack of Giddy's. Blueports are optional if you're upselling, but the Giddy's are the main thing.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll fix it.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D1_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Buy_Item"
+              ]
+            },
+            {
+              "text": "I'll fix it and add Blueports too.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy,Blueports"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D1_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Buy_Item_Upsell"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Buy_Item",
+          "text": "Alright, I'll wait while you handle the sale.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Take the photo for Shaun.",
+              "effects": [
+                {
+                  "variable": "TookIDPhotos_D1",
+                  "value": "true"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "true"
+                },
+                {
+                  "variable": "SuspiciousActivity",
+                  "value": "2"
+                },
+                {
+                  "variable": "Incrimination",
+                  "value": "2"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
+                  "keyMomentText": "Completed Shaun's first suspicious old ID photo request.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "AcceptedPhotoOffer_D1",
+                  "value": "true"
+                }
+              ],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            },
+            {
+              "text": "No photos. Finish normally.",
+              "effects": [
+                {
+                  "variable": "TookIDPhotos_D1",
+                  "value": "false"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Buy_Item_Upsell",
+          "text": "Alright, I'll wait while you handle the sale.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Take the photo for Shaun.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "UpsoldNumber",
+                  "value": "1"
+                },
+                {
+                  "variable": "TookIDPhotos_D1",
+                  "value": "true"
+                },
+                {
+                  "variable": "SuspiciousActivity",
+                  "value": "2"
+                },
+                {
+                  "variable": "Incrimination",
+                  "value": "2"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
+                  "keyMomentText": "Completed Shaun's first suspicious old ID photo request while offering Blueports as an upsell.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "AcceptedPhotoOffer_D1",
+                  "value": "true"
+                }
+              ],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            },
+            {
+              "text": "No photos. Finish normally.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "UpsoldNumber",
+                  "value": "1"
+                },
+                {
+                  "variable": "TookIDPhotos_D1",
+                  "value": "false"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "nodes": [
+        {
+          "id": "Shaun_D3_Start",
+          "text": "Hey, Clerk. How's the shiny new SSI world treating you?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Hi, Shaun.",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "AcceptedPhotoOffer_D1",
+                  "value": "true"
+                }
+              ],
+              "nextNodes": [
+                "Shaun_D3_Accepted_Before"
+              ]
+            },
+            {
+              "text": "Hi, Shaun.",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "AcceptedPhotoOffer_D1",
+                  "value": "false"
+                }
+              ],
+              "nextNodes": [
+                "Shaun_D3_Refused_Before"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_Accepted_Before",
+          "text": "Hope you got something useful from those old IDs. If not, no stress. That was the warm-up. SSI is where the cleaner money is.",
+          "requirements": [
+            {
+              "variable": "AcceptedPhotoOffer_D1",
+              "value": "true"
+            }
+          ],
+          "options": [
+            {
+              "text": "What do you need this time?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_SSI_Offer"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_Refused_Before",
+          "text": "I know you said no to taking photos of old IDs, but hear me out. This time it's SSI screenshots. Cleaner, quicker, and people approve extra fields without thinking.",
+          "requirements": [
+            {
+              "variable": "AcceptedPhotoOffer_D1",
+              "value": "false"
+            }
+          ],
+          "options": [
+            {
+              "text": "Different how?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_SSI_Offer"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_SSI_Offer",
+          "text": "People trust the SSI screen. If you ask for a little extra, most of them just approve it. Address, issuer, extra credentials, whatever shows up. I can pay you €50 now, then more for useful screenshots later.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "That sounds worse than the old ID thing.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_SSI_Explain"
+              ]
+            },
+            {
+              "text": "Keep talking, Shaun. [Record audio]",
+              "effects": [
+                {
+                  "variable": "RecordedShaun_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "MadeRecording",
+                  "value": "true"
+                },
+                {
+                  "variable": "ShaunEvidence",
+                  "value": "2"
+                },
+                {
+                  "variable": "Incrimination",
+                  "value": "3"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "ssi_oversharing_scheme"
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "HasRecordingDevice",
+                  "value": "true"
+                }
+              ],
+              "nextNodes": [
+                "Shaun_D3_SSI_Explain_Recorded"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_SSI_Explain",
+          "text": "Worse? Come on. You're not stealing their wallet. You're asking, they approve, you screenshot what they shared. That is how half the data market works.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "What do you want me to do exactly?",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "ssi_oversharing_scheme"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_New_Offer"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_SSI_Explain_Recorded",
+          "text": "Careful. If you keep staring like that, people will think you're nervous. I'm just saying: ask for extra fields, screenshot what gets approved, send it over.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "What do you want me to do exactly?",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "ssi_oversharing_scheme"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_New_Offer"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_New_Offer",
+          "text": "Ask for more than you need during SSI checks. Then screenshot the approved info and send it my way. Names, addresses, issuer names, habits, preferences. Small pieces add up. I'll give you €50 now so you know I'm serious.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Fine. I could use the €50.",
+              "effects": [
+                                {
+                  "variable": "AddMoney",
+                  "value": "50"
+                },
+                {
+                  "variable": "ReceivedShaunMoney_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "AcceptedSSIDataOffer_D3",
+                  "value": "true"
+                },
+                {
+                 "variable": "UnlockFavouriteFoods",
+                  "value": "true"
+                },
+                {
+                  "variable": "OverAskedSSIData_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "ScreenshottedSSIData_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "true"
+                },
+                {
+                  "variable": "SuspiciousActivity",
+                  "value": "4"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "ssi_screenshot_scheme"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
+                  "keyMomentText": "Accepted Shaun's offer to over-request and screenshot SSI data.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_Positive_Accept"
+              ]
+            },
+            {
+              "text": "No. I don't want to get involved with anything I might regret.",
+              "effects": [
+                {
+                  "variable": "AcceptedSSIDataOffer_D3",
+                  "value": "false"
+                },
+                {
+                  "variable": "OverAskedSSIData_D3",
+                  "value": "false"
+                },
+                {
+                  "variable": "ScreenshottedSSIData_D3",
+                  "value": "false"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "false"
+                },
+                {
+                  "keyMomentText": "Refused Shaun's SSI data offer without escalating.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_Neutral_Refuse"
+              ]
+            },
+            {
+              "text": "That's not okay. I'm not helping.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "AcceptedSSIDataOffer_D3",
+                  "value": "false"
+                },
+                {
+                  "variable": "OverAskedSSIData_D3",
+                  "value": "false"
+                },
+                {
+                  "variable": "ScreenshottedSSIData_D3",
+                  "value": "false"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "false"
+                },
+                {
+                  "keyMomentText": "Refused Shaun's SSI data collection offer.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_Negative_Refuse"
+              ]
+            },
+            {
+              "text": "Fine. But if anyone asks, this never came from me. (+50$)",
+              "effects": [
+                {
+                  "variable": "AddMoney",
+                  "value": "50"
+                },
+                {
+                  "variable": "ReceivedShaunMoney_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "AcceptedSSIDataOffer_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "OverAskedSSIData_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "ScreenshottedSSIData_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "true"
+                },
+                {
+                  "variable": "SuspiciousActivity",
+                  "value": "5"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "ssi_screenshot_scheme"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
+                  "keyMomentText": "Continued cooperating with Shaun's SSI data collection because of their positive relationship.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "nextNodes": [
+                "Shaun_D3_Extreme_Accept"
+              ]
+            },
+            {
+              "text": "You're scum. I'm not helping you.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "AcceptedSSIDataOffer_D3",
+                  "value": "false"
+                },
+                {
+                  "variable": "OverAskedSSIData_D3",
+                  "value": "false"
+                },
+                {
+                  "variable": "ScreenshottedSSIData_D3",
+                  "value": "false"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "false"
+                },
+                {
+                  "keyMomentText": "Strongly refused Shaun's SSI data collection offer.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "nextNodes": [
+                "Shaun_D3_Extreme_Refuse"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_Extreme_Refuse",
+          "text": "Ok nerd. Keep pretending the system is clean just because the screen looks official. I still need a pack of Giddy's though.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check Shaun's SSI first.",
+              "effects": [
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Shaun_D3_SSI_Perfect",
+                  "goodNode": "Shaun_D3_SSI_Good",
+                  "badNode": "Shaun_D3_SSI_Bad"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_Negative_Refuse",
+          "text": "Ok nerd. Don't act shocked when someone else figures out how to make money from it. Anyway, I still came in for a pack of Giddy's.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check Shaun's SSI first.",
+              "effects": [
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Shaun_D3_SSI_Perfect",
+                  "goodNode": "Shaun_D3_SSI_Good",
+                  "badNode": "Shaun_D3_SSI_Bad"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_Neutral_Refuse",
+          "text": "Fair enough. Easy money scares people the first time. Grab me a pack of Giddy's while I'm here?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check Shaun's SSI first.",
+              "effects": [
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Shaun_D3_SSI_Perfect",
+                  "goodNode": "Shaun_D3_SSI_Good",
+                  "badNode": "Shaun_D3_SSI_Bad"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_Positive_Accept",
+          "text": "That's what I like to hear. Ask casual, screenshot quick, and don't make it look weird. Now, can I get a pack of Giddy's?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check Shaun's SSI first.",
+              "effects": [
+                {
+                  "variable": "HelpedShaun",
+                  "value": "true"
+                },
+                {
+                  "variable": "SuspiciousActivity",
+                  "value": "6"
+                },
+                {
+                  "variable": "Incrimination",
+                  "value": "4"
+                },
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Shaun_D3_SSI_Perfect",
+                  "goodNode": "Shaun_D3_SSI_Good",
+                  "badNode": "Shaun_D3_SSI_Bad"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_Extreme_Accept",
+          "text": "That's what I like to hear. Quiet, useful, and smart. Now, can I get a pack of Giddy's?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check Shaun's SSI first.",
+              "effects": [
+                {
+                  "variable": "HelpedShaun",
+                  "value": "true"
+                },
+                {
+                  "variable": "SuspiciousActivity",
+                  "value": "7"
+                },
+                {
+                  "variable": "Incrimination",
+                  "value": "5"
+                },
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Shaun_D3_SSI_Perfect",
+                  "goodNode": "Shaun_D3_SSI_Good",
+                  "badNode": "Shaun_D3_SSI_Bad"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_WaitForSSI",
+          "text": "Take your time.",
+          "requirements": [],
+          "options": []
+        },
+        {
+          "id": "Shaun_D3_SSI_Perfect",
+          "text": "Bravo, you're great at this. I need one pack of Giddy's. You can sell just that, or add Blueports as my favourite-item upsell.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D3_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_Buy_Item"
+              ]
+            },
+            {
+              "text": "I'll sell you the Giddy's and add Blueports.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy,Blueports"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D3_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_Buy_Item_Upsell"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_SSI_Good",
+          "text": "You didn't hit every SSI mark there, but I don't care either, so it's fine. I need one pack of Giddy's. You can sell just that, or add Blueports too.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D3_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_Buy_Item"
+              ]
+            },
+            {
+              "text": "I'll sell you the Giddy's and add Blueports.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy,Blueports"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D3_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_Buy_Item_Upsell"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_SSI_Bad",
+          "text": "Ummmm... okay?! Anyway, I need one pack of Giddy's. You can sell just that, or add Blueports too.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D3_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_Buy_Item"
+              ]
+            },
+            {
+              "text": "I'll sell you the Giddy's and add Blueports.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy,Blueports"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D3_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_Buy_Item_Upsell"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_Illegal_Wares",
+          "text": "See? You can be flexible when you want to. I still need a pack of Giddy's.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D3_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_Buy_Item"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_Wrong_Item",
+          "text": "I need a pack of Giddy's. Blueports are optional if you're upselling, but the Giddy's are the main thing.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D3_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_Buy_Item"
+              ]
+            },
+            {
+              "text": "I'll sell you the Giddy's and add Blueports.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy,Blueports"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D3_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D3_Buy_Item_Upsell"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_Buy_Item",
+          "text": "Alright, I'll wait while you handle it.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Finish normally.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D3_Buy_Item_Upsell",
+          "text": "Alright, I'll wait while you handle it.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Finish normally.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "UpsoldNumber",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "nodes": [
+        {
+          "id": "Shaun_D4_Start",
+          "text": "Evening, Clerk. Busy day?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "What do you want, Shaun?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Opening"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_Opening",
+          "text": "Relax. I just came to check if you're still thinking straight. Yesterday was a little tense.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Go on.",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "AcceptedSSIDataOffer_D3",
+                  "value": "true"
+                }
+              ],
+              "nextNodes": [
+                "Shaun_D4_Previous_Accepted"
+              ]
+            },
+            {
+              "text": "Go on.",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "AcceptedSSIDataOffer_D3",
+                  "value": "false"
+                }
+              ],
+              "nextNodes": [
+                "Shaun_D4_Previous_Refused"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_Previous_Accepted",
+          "text": "You've already helped me. If you took SSI screenshots, this is where they pay off. Old IDs, SSI checks, customer habits... it all points somewhere if you know how to read it. You think the country rushed into SSI because people suddenly cared about privacy? No. Systems change when something breaks loudly enough.",
+          "requirements": [
+            {
+              "variable": "AcceptedSSIDataOffer_D3",
+              "value": "true"
+            }
+          ],
+          "options": [
+            {
+              "text": "Keep talking, Shaun. [Record audio]",
+              "effects": [
+                {
+                  "variable": "RecordedShaun_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "MadeRecording",
+                  "value": "true"
+                },
+                {
+                  "variable": "ShaunEvidence",
+                  "value": "3"
+                },
+                {
+                  "variable": "Incrimination",
+                  "value": "6"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "data_leak_involvement"
+                },
+                {
+                  "variable": "ShaunLeakConnection",
+                  "value": "1"
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "HasRecordingDevice",
+                  "value": "true"
+                }
+              ],
+              "nextNodes": [
+                "Shaun_D4_Final_Choice"
+              ]
+            },
+            {
+              "text": "What are you getting at?",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "data_leak_involvement"
+                },
+                {
+                  "variable": "ShaunLeakConnection",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Final_Choice"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_Previous_Refused",
+          "text": "You kept saying no, so this is the last time I ask. SSI is new, people are confused, and confused people approve things. I give you money, you send me screenshots. The whole country only started caring after that big leak anyway.",
+          "requirements": [
+            {
+              "variable": "AcceptedSSIDataOffer_D3",
+              "value": "false"
+            }
+          ],
+          "options": [
+            {
+              "text": "Keep talking, Shaun. [Record audio]",
+              "effects": [
+                {
+                  "variable": "RecordedShaun_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "MadeRecording",
+                  "value": "true"
+                },
+                {
+                  "variable": "ShaunEvidence",
+                  "value": "3"
+                },
+                {
+                  "variable": "Incrimination",
+                  "value": "6"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "ssi_rollout_panic"
+                },
+                {
+                  "variable": "ShaunLeakConnection",
+                  "value": "1"
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "HasRecordingDevice",
+                  "value": "true"
+                }
+              ],
+              "nextNodes": [
+                "Shaun_D4_Final_Choice"
+              ]
+            },
+            {
+              "text": "What are you getting at?",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "ssi_rollout_panic"
+                },
+                {
+                  "variable": "ShaunLeakConnection",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Final_Choice"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_Final_Choice",
+          "text": "Here's the thing. SSI gives clean data if you know what to ask for. Ask for more than you need, screenshot what they approve, and don't make it look weird. Leaks don't happen because one person steals everything. They happen because enough small pieces end up in the right hands.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Fine. I'll help.",
+              "effects": [
+                {
+                  "variable": "money",
+                  "value": "50"
+                },
+                {
+                  "variable": "ReceivedShaunMoney_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "BackedOut_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "CommittedToShaun_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "CommittedToSSIDataScheme_D4",
+                  "value": "true"
+                },
+                {
+                 "variable": "UnlockFavouriteFoods",
+                  "value": "true"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "SuspiciousActivity",
+                  "value": "8"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
+                  "keyMomentText": "Agreed to help Shaun with SSI data collection.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "data_leak_involvement"
+                },
+                {
+                  "variable": "DataLeakInvolvementRevealed",
+                  "value": "true"
+                },
+                {
+                  "variable": "ShaunLeakConnection",
+                  "value": "2"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Commit"
+              ]
+            },
+            {
+              "text": "I don't want to be involved anymore.",
+              "effects": [
+                {
+                  "variable": "BackedOut_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "CommittedToShaun_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "CommittedToSSIDataScheme_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Refused Shaun's SSI data collection scheme without escalating.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Back_Out"
+              ]
+            },
+            {
+              "text": "No. I'm done helping you.",
+              "effects": [
+                {
+                  "variable": "BackedOut_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "CommittedToShaun_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "CommittedToSSIDataScheme_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "false"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Backed out of Shaun's SSI data collection scheme before the final day.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Back_Out"
+              ]
+            },
+            {
+              "text": "Fine. But this is the last time.",
+              "effects": [
+                {
+                  "variable": "money",
+                  "value": "50"
+                },
+                {
+                  "variable": "ReceivedShaunMoney_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "BackedOut_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "CommittedToShaun_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "CommittedToSSIDataScheme_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "SuspiciousActivity",
+                  "value": "9"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
+                  "keyMomentText": "Agreed to help Shaun one last time with SSI data collection.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "data_leak_involvement"
+                },
+                {
+                  "variable": "DataLeakInvolvementRevealed",
+                  "value": "true"
+                },
+                {
+                  "variable": "ShaunLeakConnection",
+                  "value": "2"
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "nextNodes": [
+                "Shaun_D4_Commit_Last_Time"
+              ]
+            },
+            {
+              "text": "I never should have listened to you.",
+              "effects": [
+                {
+                  "variable": "BackedOut_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "CommittedToShaun_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "CommittedToSSIDataScheme_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "false"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Rejected Shaun after realizing the risk of his data collection scheme.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "nextNodes": [
+                "Shaun_D4_Regret"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_Back_Out",
+          "text": "Shame. You were starting to look useful. Still, I came for a pack of Giddy's, not a lecture.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check Shaun's SSI first.",
+              "effects": [
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Shaun_D4_SSI_Perfect",
+                  "goodNode": "Shaun_D4_SSI_Good",
+                  "badNode": "Shaun_D4_SSI_Bad"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_Regret",
+          "text": "Careful with that conscience. It gets expensive. Anyway, check my SSI and grab a pack of Giddy's.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check Shaun's SSI first.",
+              "effects": [
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Shaun_D4_SSI_Perfect",
+                  "goodNode": "Shaun_D4_SSI_Good",
+                  "badNode": "Shaun_D4_SSI_Bad"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_Commit",
+          "text": "There we go. Quick questions, quick screenshots, quiet mouth. That's all I need. Now, a pack of Giddy's.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check Shaun's SSI first.",
+              "effects": [
+                {
+                  "variable": "Incrimination",
+                  "value": "7"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "ssi_screenshot_scheme"
+                },
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Shaun_D4_SSI_Perfect",
+                  "goodNode": "Shaun_D4_SSI_Good",
+                  "badNode": "Shaun_D4_SSI_Bad"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_Commit_Last_Time",
+          "text": "That's what they all say. Don't worry, I'll keep it simple. Ask for the extra fields, screenshot the approved data, send it over. Now, a pack of Giddy's.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check Shaun's SSI first.",
+              "effects": [
+                {
+                  "variable": "Incrimination",
+                  "value": "7"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "ssi_screenshot_scheme"
+                },
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Shaun_D4_SSI_Perfect",
+                  "goodNode": "Shaun_D4_SSI_Good",
+                  "badNode": "Shaun_D4_SSI_Bad"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_WaitForSSI",
+          "text": "Take your time.",
+          "requirements": [],
+          "options": []
+        },
+        {
+          "id": "Shaun_D4_SSI_Perfect",
+          "text": "Bravo, you're great at this. I need one pack of Giddy's. You can sell just that, or add Blueports as my favourite-item upsell.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D4_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Buy_Item"
+              ]
+            },
+            {
+              "text": "I'll sell you the Giddy's and add Blueports.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy,Blueports"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D4_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Buy_Item_Upsell"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_SSI_Good",
+          "text": "You didn't hit every SSI mark there, but I don't care either, so it's fine. I need one pack of Giddy's. You can sell just that, or add Blueports too.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D4_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Buy_Item"
+              ]
+            },
+            {
+              "text": "I'll sell you the Giddy's and add Blueports.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy,Blueports"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D4_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Buy_Item_Upsell"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_SSI_Bad",
+          "text": "Ummmm... okay?! Anyway, I need one pack of Giddy's. You can sell just that, or add Blueports too.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D4_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Buy_Item"
+              ]
+            },
+            {
+              "text": "I'll sell you the Giddy's and add Blueports.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy,Blueports"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D4_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Buy_Item_Upsell"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_Illegal_Wares",
+          "text": "Still pretending you're not useful? I still need a pack of Giddy's.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D4_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Buy_Item"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_Wrong_Item",
+          "text": "I need a pack of Giddy's. Blueports are optional if you're upselling, but the Giddy's are the main thing.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll sell you the Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D4_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Buy_Item"
+              ]
+            },
+            {
+              "text": "I'll sell you the Giddy's and add Blueports.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy,Blueports"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Shaun_D4_Wrong_Item"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D4_Buy_Item_Upsell"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_Buy_Item",
+          "text": "Alright, I'll wait while you handle it.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Finish normally.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D4_Buy_Item_Upsell",
+          "text": "Alright, I'll wait while you handle it.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Finish normally.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "UpsoldNumber",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

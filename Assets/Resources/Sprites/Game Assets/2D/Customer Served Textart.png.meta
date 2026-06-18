@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: b128e5f1c1c61b94aa18bc3f507c9174
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5926200973102223580
+    second: Customer Served Textart_0
+  - first:
+      213: 8832004343835721697
+    second: Customer Served Textart_1
+  - first:
+      213: 2024134698589802652
+    second: Customer Served Textart_2
+  - first:
+      213: 4450661451502567045
+    second: Customer Served Textart_3
+  - first:
+      213: 474054315923391704
+    second: Customer Served Textart_4
+  - first:
+      213: -1931408786556030312
+    second: Customer Served Textart_5
+  - first:
+      213: 7281782451410324642
+    second: Customer Served Textart_6
+  - first:
+      213: -6870671331491302248
+    second: Customer Served Textart_7
+  - first:
+      213: 5779640994755183901
+    second: Customer Served Textart_8
+  - first:
+      213: -5638220870315374149
+    second: Customer Served Textart_9
+  - first:
+      213: 4789752992090221018
+    second: Customer Served Textart_10
+  - first:
+      213: -5997899943937788990
+    second: Customer Served Textart_11
+  - first:
+      213: 8539183046308840071
+    second: Customer Served Textart_12
+  - first:
+      213: 6031564480686754030
+    second: Customer Served Textart_13
+  - first:
+      213: -4462222176307058252
+    second: Customer Served Textart_14
+  - first:
+      213: -6805674075763462351
+    second: Customer Served Textart_15
+  - first:
+      213: 3466753359314935019
+    second: Customer Served Textart_16
+  - first:
+      213: -7912344065221891466
+    second: Customer Served Textart_17
+  - first:
+      213: 1192701850714763215
+    second: Customer Served Textart_18
+  - first:
+      213: -6673630347035635401
+    second: Customer Served Textart_19
+  - first:
+      213: -5009329908740947638
+    second: Customer Served Textart_20
+  - first:
+      213: -8978461245465111313
+    second: Customer Served Textart_21
+  - first:
+      213: 3005561762306489847
+    second: Customer Served Textart_22
+  - first:
+      213: 3162936432755565129
+    second: Customer Served Textart_23
+  - first:
+      213: 1923610637061436811
+    second: Customer Served Textart_24
+  - first:
+      213: -2739301966348685652
+    second: Customer Served Textart_25
+  - first:
+      213: -6836921857483091599
+    second: Customer Served Textart_26
+  - first:
+      213: -5124038766804822058
+    second: Customer Served Textart_27
+  - first:
+      213: -716456754358615560
+    second: Customer Served Textart_28
+  - first:
+      213: 6147603690395257992
+    second: Customer Served Textart_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Customer Served Textart_0
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 172
+        width: 46
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42feaa20d97e1cda0800000000000000
+      internalID: -5926200973102223580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_1
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 172
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eff8012825919a70800000000000000
+      internalID: 8832004343835721697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_2
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 171
+        width: 55
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c90dcf6b8cb271c10800000000000000
+      internalID: 2024134698589802652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_3
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 171
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58eb550720de3cd30800000000000000
+      internalID: 4450661451502567045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_4
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 172
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4cad083ed249600800000000000000
+      internalID: 474054315923391704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_5
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 172
+        width: 51
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 892724111f14235e0800000000000000
+      internalID: -1931408786556030312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_6
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 172
+        width: 52
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac4cfb1f861e0560800000000000000
+      internalID: 7281782451410324642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_7
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 172
+        width: 51
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 894300e83d876a0a0800000000000000
+      internalID: -6870671331491302248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_8
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 172
+        width: 16
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d150ba5ecd8653050800000000000000
+      internalID: 5779640994755183901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_9
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 171
+        width: 54
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb988a3bdf301c1b0800000000000000
+      internalID: -5638220870315374149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_10
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 171
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad9e66718fe987240800000000000000
+      internalID: 4789752992090221018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_11
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 172
+        width: 51
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c3b04b77cd23cca0800000000000000
+      internalID: -5997899943937788990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 145
+        width: 1474
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 782c643fcb5418670800000000000000
+      internalID: 8539183046308840071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_13
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 35
+        width: 96
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee8823740fb64b350800000000000000
+      internalID: 6031564480686754030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_14
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 35
+        width: 92
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b9e85092900312c0800000000000000
+      internalID: -4462222176307058252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_15
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 35
+        width: 91
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13fa8017c736d81a0800000000000000
+      internalID: -6805674075763462351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_16
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 36
+        width: 100
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: becdbd900d16c1030800000000000000
+      internalID: 3466753359314935019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_17
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 35
+        width: 103
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a67cb7ef4b13290800000000000000
+      internalID: -7912344065221891466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_18
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 36
+        width: 118
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcfedc693045d8010800000000000000
+      internalID: 1192701850714763215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_19
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 36
+        width: 82
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7319caace808263a0800000000000000
+      internalID: -6673630347035635401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_20
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 36
+        width: 97
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4181c21df84b7ab0800000000000000
+      internalID: -5009329908740947638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_21
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 35
+        width: 91
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe4d0723119166380800000000000000
+      internalID: -8978461245465111313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_22
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 36
+        width: 82
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd76c8af76e5b920800000000000000
+      internalID: 3005561762306489847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_23
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 36
+        width: 97
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94269897de105eb20800000000000000
+      internalID: 3162936432755565129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_24
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 36
+        width: 108
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b85b534cea902ba10800000000000000
+      internalID: 1923610637061436811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_25
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 36
+        width: 82
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caee143006b0cf9d0800000000000000
+      internalID: -2739301966348685652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_26
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 36
+        width: 95
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 171dd9f4bcf5e11a0800000000000000
+      internalID: -6836921857483091599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_27
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 66
+        width: 29
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d79441d3e1c3e8b0800000000000000
+      internalID: -5124038766804822058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_28
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 35
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f1868bb062ae06f0800000000000000
+      internalID: -716456754358615560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer Served Textart_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1474
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88cc3e92cfca05550800000000000000
+      internalID: 6147603690395257992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Customer Served Textart_0: -5926200973102223580
+      Customer Served Textart_1: 8832004343835721697
+      Customer Served Textart_10: 4789752992090221018
+      Customer Served Textart_11: -5997899943937788990
+      Customer Served Textart_12: 8539183046308840071
+      Customer Served Textart_13: 6031564480686754030
+      Customer Served Textart_14: -4462222176307058252
+      Customer Served Textart_15: -6805674075763462351
+      Customer Served Textart_16: 3466753359314935019
+      Customer Served Textart_17: -7912344065221891466
+      Customer Served Textart_18: 1192701850714763215
+      Customer Served Textart_19: -6673630347035635401
+      Customer Served Textart_2: 2024134698589802652
+      Customer Served Textart_20: -5009329908740947638
+      Customer Served Textart_21: -8978461245465111313
+      Customer Served Textart_22: 3005561762306489847
+      Customer Served Textart_23: 3162936432755565129
+      Customer Served Textart_24: 1923610637061436811
+      Customer Served Textart_25: -2739301966348685652
+      Customer Served Textart_26: -6836921857483091599
+      Customer Served Textart_27: -5124038766804822058
+      Customer Served Textart_28: -716456754358615560
+      Customer Served Textart_29: 6147603690395257992
+      Customer Served Textart_3: 4450661451502567045
+      Customer Served Textart_4: 474054315923391704
+      Customer Served Textart_5: -1931408786556030312
+      Customer Served Textart_6: 7281782451410324642
+      Customer Served Textart_7: -6870671331491302248
+      Customer Served Textart_8: 5779640994755183901
+      Customer Served Textart_9: -5638220870315374149
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
