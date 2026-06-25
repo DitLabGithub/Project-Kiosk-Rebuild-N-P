@@ -9,6 +9,21 @@
   "height": 170,
   "hairColor": "White",
   "eyeColor": "Green",
+
+  "ssiProfiles": [
+  {
+    "key": "own",
+    "data": {
+      "avatarPath": "Sprites/Avatars/Jop",
+      "ownerName": "Jop",
+      "age": 64,
+      "address": "2 Old Harbor Street",
+      "personalID": "7361940285",
+      "valid": true
+    }
+  }
+],
+
   "favouriteItems": [
     "SproingelsBlue",
     "SproingelsGreen"

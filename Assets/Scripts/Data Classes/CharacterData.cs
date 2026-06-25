@@ -42,7 +42,11 @@ public class CustomSSIData
 
     public string address;
 
-    public string expiryDate;
+    public string personalID;
+
+    public bool valid;
+
+    public string[] authorizedRepresentatives = new string[0];
 }
 [System.Serializable]
 public class CustomSSIEntry

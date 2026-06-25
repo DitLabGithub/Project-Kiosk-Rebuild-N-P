@@ -9,10 +9,26 @@
   "height": 183,
   "hairColor": "Brown",
   "eyeColor": "Hazel",
+
   "favouriteItems": [
     "PackOfGiddy",
     "Blueports"
   ],
+
+  "ssiProfiles": [
+  {
+    "key": "own",
+    "data": {
+      "avatarPath": "Sprites/Avatars/Shaun",
+      "ownerName": "Shaun",
+      "age": 19,
+      "address": "Dormitory Block C",
+      "personalID": "2153126123",
+      "valid": true
+    }
+  }
+],
+
   "details": [
     {
       "key": "favorite_items",

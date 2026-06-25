@@ -11,17 +11,29 @@
   "eyeColor": "Green",
 
   "ssiProfiles": [
-    {
-      "key": "day5_stolen_father_ssi",
-      "data": {
-        "avatarPath": "Sprites/Avatars/AmonDad",
-        "ownerName": "Marek Valk",
-        "age": 46,
-        "address": "12 East Hollow Street",
-        "expiryDate": "2028-04-11"
-      }
+  {
+    "key": "own",
+    "data": {
+      "avatarPath": "Sprites/Avatars/Amon",
+      "ownerName": "Amon",
+      "age": 17,
+      "address": "12 East Hollow Street",
+      "personalID": "3085729146",
+      "valid": true
     }
-  ],
+  },
+  {
+    "key": "day5_stolen_father_ssi",
+    "data": {
+      "avatarPath": "Sprites/Avatars/AmonDad",
+      "ownerName": "Marek Valk",
+      "age": 46,
+      "address": "12 East Hollow Street",
+      "personalID": "9472605831",
+      "valid": true
+    }
+  }
+],
 
   "favouriteItems": [
     "Rambolos",

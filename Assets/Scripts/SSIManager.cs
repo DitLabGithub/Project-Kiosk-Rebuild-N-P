@@ -9,9 +9,10 @@ public class SSIManager : MonoBehaviour
     public TextMeshProUGUI name;
     public TextMeshProUGUI age;
     public TextMeshProUGUI above18;
-    public TextMeshProUGUI above21;
+    public TextMeshProUGUI valid;
     public TextMeshProUGUI address;
-    public TextMeshProUGUI expiryDate;
+    public TextMeshProUGUI personalID;
+    public TextMeshProUGUI authorized;
     public GameObject buttonToHideForPhoto;
     public GameObject SSICopyButton;
 
@@ -25,26 +26,15 @@ public class SSIManager : MonoBehaviour
 
     private CustomSSIData currentSSI;
 
-    private bool usingOwnProfile;
 
     private void Awake()
     {
         Instance = this;
     }
 
-    public void SetSSIProfile(
-    string profileName
-)
+    public void SetSSIProfile(string profileName)
     {
-        usingOwnProfile =
-            profileName == "own";
-
         currentSSI = null;
-
-        if (usingOwnProfile)
-        {
-            return;
-        }
 
         var profile =
             DialogueManager
@@ -53,16 +43,12 @@ public class SSIManager : MonoBehaviour
             .data
             .ssiProfiles
             .Find(
-                s =>
-                s.key
-                ==
-                profileName
+                s => s.key == profileName
             );
 
         if (profile != null)
         {
-            currentSSI =
-                profile.data;
+            currentSSI = profile.data;
         }
         else
         {
@@ -89,12 +75,14 @@ public class SSIManager : MonoBehaviour
                 requiredFields.Add("photo");
                 requiredFields.Add("name");
                 requiredFields.Add("address");
+                requiredFields.Add("valid");
             }
             else if (o == "alcohol")
             {
                 requiredFields.Add("above18");
                 requiredFields.Add("photo");
-                requiredFields.Add("expiryDate");
+                requiredFields.Add("valid");
+
             }
             else if (o == "food")
             {
@@ -173,14 +161,7 @@ public class SSIManager : MonoBehaviour
 
     public void RevealName()
     {
-        name.text =
-            usingOwnProfile
-            ? DialogueManager
-                .Instance
-                .currentNPC
-                .data
-                .name
-            : currentSSI.ownerName;
+        name.text = currentSSI.ownerName;
 
         askedFields.Add("name");
     }
@@ -188,110 +169,64 @@ public class SSIManager : MonoBehaviour
     public void RevealAge()
     {
         age.text =
-            (
-                usingOwnProfile
-                ? DialogueManager
-                    .Instance
-                    .currentNPC
-                    .data
-                    .age
-                : currentSSI.age
-            ).ToString();
+            currentSSI.age.ToString();
 
         askedFields.Add("age");
     }
 
     public void RevealAbove18()
     {
-        int a =
-            usingOwnProfile
-            ? DialogueManager
-                .Instance
-                .currentNPC
-                .data
-                .age
-            : currentSSI.age;
-
         above18.text =
-            a >= 18
+            currentSSI.age >= 18
             ? "Yes"
             : "No";
 
-        askedFields.Add(
-            "above18"
-        );
+        askedFields.Add("above18");
     }
 
-    public void RevealAbove21()
+    public void RevealValid()
     {
-        int a =
-            usingOwnProfile
-            ? DialogueManager
-                .Instance
-                .currentNPC
-                .data
-                .age
-            : currentSSI.age;
+        valid.text =
+            currentSSI.valid ? "Yes" : "No";
 
-        above21.text =
-            a >= 21
-            ? "Yes"
-            : "No";
-
-        askedFields.Add(
-            "above21"
-        );
+        askedFields.Add("valid");
     }
 
     public void RevealAddress()
     {
         address.text =
-            usingOwnProfile
-            ? DialogueManager
-                .Instance
-                .currentNPC
-                .data
-                .address
-            : currentSSI.address;
+            currentSSI.address;
 
-        askedFields.Add(
-            "address"
-        );
+        askedFields.Add("address");
     }
 
-    public void RevealExpiryDate()
+    public void RevealPersonalID()
     {
-        expiryDate.text =
-            usingOwnProfile
-            ? DialogueManager
-                .Instance
-                .currentNPC
-                .data
-                .expiryDate
-            : currentSSI.expiryDate;
+        personalID.text =
+            currentSSI.personalID;
 
-        askedFields.Add(
-            "expiryDate"
-        );
+        askedFields.Add("personalID");
     }
 
     public void RevealPhoto()
     {
         photo.sprite =
-            usingOwnProfile
-            ? DialogueManager
-                .Instance
-                .currentNPC
-                .data
-                .avatar
-            : currentSSI.avatar;
+            currentSSI.avatar;
 
         buttonToHideForPhoto
             .SetActive(false);
 
-        askedFields.Add(
-            "photo"
-        );
+        askedFields.Add("photo");
+    }
+
+    public void RevealAuthorized()
+    {
+        authorized.text =
+            string.Join(", ", currentSSI.authorizedRepresentatives);
+        if(authorized.text == "")
+        {
+            authorized.text = "None";
+        }   
     }
 
     public void SetupResultNodes(
@@ -314,9 +249,9 @@ public class SSIManager : MonoBehaviour
         name.text = "Request";
         age.text = "Request";
         above18.text = "Request";
-        above21.text = "Request";
+        valid.text = "Request";
         address.text = "Request";
-        expiryDate.text = "Request";
+        personalID.text = "Request";
 
         buttonToHideForPhoto.SetActive(true);
     }

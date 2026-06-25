@@ -9,6 +9,21 @@
   "height": 167,
   "hairColor": "Red",
   "eyeColor": "Blue",
+
+  "ssiProfiles": [
+  {
+    "key": "own",
+    "data": {
+      "avatarPath": "Sprites/Avatars/Lily",
+      "ownerName": "Lily",
+      "age": 32,
+      "address": "88 Willow Apartments",
+      "personalID": "4928173650",
+      "valid": true
+    }
+  }
+],
+
   "favouriteItems": [
     "RedWine",
     "SproingelsBlue"

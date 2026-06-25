@@ -1,245 +1,1720 @@
 {
   "name": "Fridgy",
   "avatarPath": "Sprites/Avatars/Fridgy",
-
-  "age": 31,
-  "above18": true,
+  "age": 8,
+  "above18": false,
   "address": "4 Riverside Alley",
-  "expiryDate": "2027-03-11",
-  "gender": "Male",
-  "height": 181,
-  "hairColor": "Blonde",
-  "eyeColor": "Gray",
-
-  "favouriteItems": ["MintFizz", "SproingelsGreen"],
-
-  "details": [
-    { "key": "gambler", "text": "Fridgy spends too much money gambling." },
-    { "key": "loud", "text": "Fridgy speaks way too loudly." }
-  ],
-
-  "variables": [
-    { "name": "friendship", "value": "0" },
-    { "name": "UpsoldNumber", "value": "0" }
-  ],
-
-"dialogues": [
+  "expiryDate": "2029-03-11",
+  "gender": "N/A",
+  "height": 190,
+  "hairColor": "N/A",
+  "eyeColor": "N/A",
+  "ssiProfiles": [
   {
-    "day": 1,
-    "nodes": [
-      {
-        "id": "Fridgy_D1_Start",
-        "text": "Yo. You must be the new clerk. Name's Fridgy. I'm basically the boss's fridge.",
-        "requirements": [],
-        "options": [
-          {
-            "text": "The boss's fridge?",
-            "effects": [],
-            "requirements": [],
-            "nextNodes": ["Fridgy_D1_ExplainJob"]
-          }
-        ]
-      },
-      {
-        "id": "Fridgy_D1_ExplainJob",
-        "text": "Yeah. Don't question it. Anyway, welcome to the kiosk. Your job here is simple. Sell products, hand over packages, and identify people before giving them what they ask for.",
-        "requirements": [],
-        "options": [
-          {
-            "text": "So I decide if customers should get their orders?",
-            "effects": [{
-                "variable": "start_blink",
-                "value": "Money"
-              }],
-            "requirements": [],
-            "nextNodes": ["Fridgy_D1_MoneyGoal"]
-          }
-        ]
-      },
-      {
-        "id": "Fridgy_D1_MoneyGoal",
-        "text": "Exactly. And every day you've got a money goal to reach. See the top part of the screen? That's where you track how much money you've made and how much you still need.",
-        "requirements": [],
-        "options": [
-          {
-            "text": "Got it.",
-            "effects": [
-              {
-                "variable": "stop_blink",
-                "value": "Money"
-              }
-            ],
-            "requirements": [],
-            "nextNodes": ["Fridgy_D1_FriendshipIntro"]
-          }
-        ]
-      },
-      {
-        "id": "Fridgy_D1_FriendshipIntro",
-        "text": "Now the important part. People remember how you treat them. Dialogue options and actions can influence friendship. Some people will like you more. Others will hate your guts.",
-        "requirements": [],
-        "options": [
-          {
-            "text": "I think we'll get along just fine.",
-            "effects": [
-              {
-                "variable": "friendship",
-                "value": "1"
-              },
-              {
-                "keyMomentText": "Started off on good terms with Fridgy.",
-                "keyMomentPositive": true
-              },
-              {
-                "variable": "start_blink",
-                "value": "FriendshipButton"
-              }
-            ],
-            "requirements": [],
-            "nextNodes": ["Fridgy_D1_PositiveFriendship"]
-          }
-        ]
-      },
-      {
-        "id": "Fridgy_D1_PositiveFriendship",
-        "text": "See this option only appears because we're friends. Some dialogue choices only show up depending on how much someone likes or dislikes you.",
-        "requirements": [],
-        "options": [
-          {
-            "text": "Nice. Glad you're helping me out.",
-            "effects": [
-              {
-                "variable": "friendship",
-                "value": "-1"
-              },
-              {
-                "keyMomentText": "Accidentally offended Fridgy after gaining his trust.",
-                "keyMomentPositive": false
-              }
-            ],
-            "requirements": [
-              {
-                "variable": "friendship",
-                "value": "1"
-              }
-            ],
-            "nextNodes": ["Fridgy_D1_NegativeOnlyOption"]
-          }
-        ]
-      },
-      {
-        "id": "Fridgy_D1_NegativeFriendship",
-        "text": "Yeah, well, customers can get annoying too. Point is, friendship matters.",
-        "requirements": [],
-        "options": [
-          {
-            "text": "Continue.",
-            "effects": [],
-            "requirements": [
-              {
-                "variable": "friendship",
-                "value": "1"
-              }
-            ],
-            "nextNodes": ["Fridgy_D1_FriendshipTab"]
-          }
-        ]
-      },
-      {
-        "id": "Fridgy_D1_NegativeOnlyOption",
-        "text": "And now you made it worse. Good job. Since our friendship dropped, different dialogue options can appear too.",
-        "requirements": [],
-        "options": [
-          {
-            "text": "You really are loud.",
-            "effects": [
-              {
-                "variable": "unlock_detail",
-                "value": "loud"
-              }
-            ],
-            "requirements": [
-              {
-                "variable": "friendship",
-                "value": "-1"
-              }
-            ],
-            "nextNodes": ["Fridgy_D1_FriendshipTab"]
-          }
-        ]
-      },
-      {
-        "id": "Fridgy_D1_FriendshipTab",
-        "text": "You can always check your relationship status with people from the friendship tab at the top of the screen. That's also where you'll find details and important key moments you've discovered. All important character information is stored there.",
-        "requirements": [],
-        "options": [
-          {
-            "text": "Makes sense.",
-            "effects": [
-              {
-                "variable": "start_blink",
-                "value": "FriendshipButton"
-              }
-            ],
-            "requirements": [],
-            "nextNodes": ["Fridgy_D1_PackageIntro"]
-          }
-        ]
-      },
-      {
-        "id": "Fridgy_D1_PackageIntro",
-        "text": "Alright, last thing. Let's do a quick package pickup example. Here's my ID.",
-        "requirements": [],
-        "options": [
-          {
-            "text": "Open ID tab.",
-            "effects": [
-              {
-                "variable": "open_id_tab",
-                "value": "true"
-              }
-            ],
-            "requirements": [],
-            "nextNodes": ["Fridgy_D1_AfterID"]
-          }
-        ]
-      },
-      {
-        "id": "Fridgy_D1_AfterID",
-        "text": "Perfect. Now just grab my package and we'll call your training complete.",
-        "requirements": [],
-        "options": [
-          {
-            "text": "Open wares tab and hand over the package.",
-            "effects": [
-              {
-                "variable": "open_wares_tab",
-                "value": "Package"
-              },
-              {
-                "variable": "open_id_tab",
-                "value": "false"
-              }
-            ],
-            "requirements": [],
-            "nextNodes": ["Fridgy_D1_End"]
-          }
-        ]
-      },
-      {
-        "id": "Fridgy_D1_End",
-        "text": "Nice. You're officially kiosk-certified now. Try not to destroy the economy before lunch.",
-        "requirements": [],
-        "options": [
-          {
-            "text": "End interaction.",
-            "effects": [],
-            "requirements": [],
-            "nextNodes": ["End_Dialogue"]
-          }
-        ]
-      }
+    "key": "own",
+    "data": {
+      "avatarPath": "Sprites/Avatars/Fridgy",
+      "ownerName": "Fridgy",
+      "age": 8,
+      "address": "4 Riverside Alley",
+      "personalID": "8502749136",
+      "valid": true
+    }
+  },
+  {
+    "key": "day4_owner_delegation",
+    "data": {
+      "avatarPath": "Sprites/Avatars/Peter",
+      "ownerName": "Peter Cruise",
+      "age": 42,
+      "address": "4 Riverside Alley",
+      "personalID": "6195837402",
+      "valid": true,
+      
+    "authorizedRepresentatives": [
+      "Peter"
     ]
+    }
+  },
+  {
+    "key": "day5_owner_delegation",
+    "data": {
+      "avatarPath": "Sprites/Avatars/Peter",
+      "ownerName": "Peter Cruise",
+      "age": 42,
+      "address": "4 Riverside Alley",
+      "personalID": "2047581936",
+      "valid": true
+    }
   }
-]
+],
+  "favouriteItems": [
+    "PackOfGiddy"
+  ],
+  "details": [
+    {
+      "key": "favorite_items",
+      "text": "Favourite item: Pack of Giddy's."
+    },
+    {
+      "key": "owner_connection",
+      "text": "Fridgy belongs to the kiosk owner, Peter Cruise."
+    },
+    {
+      "key": "kiosk_helper",
+      "text": "Fridgy helps the owner track the kiosk and its daily money goals."
+    },
+    {
+      "key": "dry_humour",
+      "text": "Fridgy speaks normally but has a dry, slightly strange sense of humour."
+    },
+    {
+      "key": "owner_delegation",
+      "text": "Peter can authorise Fridgy to collect a specific product on his behalf."
+    },
+    {
+      "key": "authorisation_scope",
+      "text": "The authorisation covers one Pack of Giddy's, one use, and the current transaction."
+    },
+    {
+      "key": "fridgy_own_ssi",
+      "text": "After being refused, Fridgy received his own SSI containing his machine identity and the owner's limited authorisation."
+    },
+    {
+      "key": "fresh_authorisation",
+      "text": "A delegated authorisation cannot be reused. Peter must issue a fresh one for a new purchase."
+    },
+    {
+      "key": "loud",
+      "text": "Fridgy is loud and talks more than most fridges."
+    }
+  ],
+  "variables": [
+    {
+      "name": "friendship",
+      "value": "0"
+    },
+    {
+      "name": "lawfulness",
+      "value": "0"
+    },
+    {
+      "name": "UpsoldNumber",
+      "value": "0"
+    },
+    {
+      "name": "CheckedOwnerSSI_D4",
+      "value": "false"
+    },
+    {
+      "name": "AskedTooMuch_D4",
+      "value": "false"
+    },
+    {
+      "name": "SoldBeer_D4",
+      "value": "false"
+    },
+    {
+      "name": "RefusedBeer_D4",
+      "value": "false"
+    },
+    {
+      "name": "UsedOwnSSI_D5",
+      "value": "false"
+    },
+    {
+      "name": "UsedOwnerSSI_D5",
+      "value": "false"
+    },
+    {
+      "name": "AskedTooMuch_D5",
+      "value": "false"
+    },
+    {
+      "name": "SoldBeer_D5",
+      "value": "false"
+    },
+    {
+      "name": "RefusedBeer_D5",
+      "value": "false"
+    },
+    {
+      "name": "wrong_item_node",
+      "value": ""
+    }
+  ],
+  "dialogues": [
+    {
+      "day": 1,
+      "nodes": [
+        {
+          "id": "Fridgy_D1_Start",
+          "text": "Yo. You must be the new clerk. Name's Fridgy. I'm basically the boss's fridge.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "The boss's fridge?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D1_ExplainJob"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D1_ExplainJob",
+          "text": "Yeah. Don't question it. Anyway, welcome to the kiosk. Your job here is simple. Sell products, hand over packages, and identify people before giving them what they ask for.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "So I decide if customers should get their orders?",
+              "effects": [
+                {
+                  "variable": "start_blink",
+                  "value": "Money"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D1_MoneyGoal"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D1_MoneyGoal",
+          "text": "Exactly. And every day you've got a money goal to reach. See the top part of the screen? That's where you track how much money you've made and how much you still need.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Got it.",
+              "effects": [
+                {
+                  "variable": "stop_blink",
+                  "value": "Money"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D1_FriendshipIntro"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D1_FriendshipIntro",
+          "text": "Now the important part. People remember how you treat them. Dialogue options and actions can influence friendship. Some people will like you more. Others will hate your guts.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I think we'll get along just fine.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Started off on good terms with Fridgy.",
+                  "keyMomentPositive": true
+                },
+                {
+                  "variable": "start_blink",
+                  "value": "FriendshipButton"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D1_PositiveFriendship"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D1_PositiveFriendship",
+          "text": "See? These options only appear because we're friends. Some dialogue choices only show up depending on how much someone likes or dislikes you.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Nice. Glad you're helping me out.",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "nextNodes": [
+                "Fridgy_D1_FriendshipTab"
+              ]
+            },
+            {
+              "text": "You really are loud.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "loud"
+                },
+                {
+                  "keyMomentText": "Offended Fridgy after gaining his trust.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "nextNodes": [
+                "Fridgy_D1_NegativeOnlyOption"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D1_NegativeOnlyOption",
+          "text": "And now you made it worse. Good job. Since our friendship dropped, different dialogue options can appear too.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Alright, I get it.",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "nextNodes": [
+                "Fridgy_D1_FriendshipTab"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D1_FriendshipTab",
+          "text": "You can always check your relationship status with people from the friendship tab at the top of the screen. That's also where you'll find details and important key moments you've discovered. All important character information is stored there.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Makes sense.",
+              "effects": [
+                {
+                  "variable": "stop_blink",
+                  "value": "FriendshipButton"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D1_PackageIntro"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D1_PackageIntro",
+          "text": "Alright, last thing. Let's do a quick package pickup example. Here's my ID.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Open ID tab.",
+              "effects": [
+                {
+                  "variable": "open_id_tab",
+                  "value": "true"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D1_AfterID"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D1_AfterID",
+          "text": "Perfect. Now just grab my package and we'll call your training complete.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Open wares tab and hand over the package.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Package"
+                },
+                {
+                  "variable": "open_id_tab",
+                  "value": "false"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D1_End"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D1_End",
+          "text": "Nice. You're officially kiosk-certified now. Try not to destroy the economy before lunch.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "nodes": [
+        {
+          "id": "Fridgy_D4_Start",
+          "text": "Hey, Clerk. The kiosk is still standing, so I assume things are going reasonably well.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Good to see you, Fridgy. What brings you in?",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "nextNodes": [
+                "Fridgy_D4_FriendlyIntro"
+              ]
+            },
+            {
+              "text": "What do you need today?",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "0"
+                }
+              ],
+              "nextNodes": [
+                "Fridgy_D4_NeutralIntro"
+              ]
+            },
+            {
+              "text": "Let's keep this quick.",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "nextNodes": [
+                "Fridgy_D4_NegativeIntro"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D4_FriendlyIntro",
+          "text": "Good to see you too. My owner sent me for one Pack of Giddy's. Apparently owning a fridge is not enough; now he sends it shopping as well.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "How are you proving he authorised the purchase?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_Request"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D4_NeutralIntro",
+          "text": "My owner sent me for one Pack of Giddy's. I brought his SSI, including permission for me to collect it.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Show me the SSI.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_OpenSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D4_NegativeIntro",
+          "text": "Fine by me. One Pack of Giddy's for my owner. His SSI includes the authorisation. Short enough?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Show me the SSI.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_OpenSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D4_Request",
+          "text": "It should show that Peter is over 18, that he sent me, and that I'm allowed to pick up one Pack of Giddy's. That's all you need.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check Peter's SSI and delegated authorisation.",
+              "effects": [
+                {
+                  "variable": "CheckedOwnerSSI_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "day4_owner_delegation|alcohol",
+                  "perfectNode": "Fridgy_D4_SSI_Perfect",
+                  "goodNode": "Fridgy_D4_SSI_Close",
+                  "badNode": "Fridgy_D4_SSI_TooMuch"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "owner_delegation"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorisation_scope"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D4_OpenSSI",
+          "text": "Go ahead. Just check that Peter is over 18 and that I'm allowed to collect one pack.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check Peter's SSI and delegated authorisation.",
+              "effects": [
+                {
+                  "variable": "CheckedOwnerSSI_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "day4_owner_delegation|alcohol",
+                  "perfectNode": "Fridgy_D4_SSI_Perfect",
+                  "goodNode": "Fridgy_D4_SSI_Close",
+                  "badNode": "Fridgy_D4_SSI_TooMuch"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "owner_delegation"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorisation_scope"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D4_WaitForSSI",
+          "text": "Take your time. Peter's waiting at home, and somehow this will become my fault if I'm late.",
+          "requirements": [],
+          "options": []
+        },
+        {
+          "id": "Fridgy_D4_SSI_Perfect",
+          "text": "Looks good. Peter's over 18, I'm authorised, and it's for one pack.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Everything matches. Sell one Pack of Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D4_WrongItem"
+                },
+                {
+                  "variable": "SoldBeer_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "RefusedBeer_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Verified Peter's delegated authorisation and sold one Pack of Giddy's to Fridgy.",
+                  "keyMomentPositive": true
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_Sold"
+              ]
+            },
+            {
+              "text": "The authorisation is valid, but I still refuse the sale.",
+              "effects": [
+                {
+                  "variable": "SoldBeer_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "RefusedBeer_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "keyMomentText": "Refused Fridgy even though Peter's SSI contained valid delegated authorisation.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_Refused"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D4_SSI_Close",
+          "text": "You checked a little more than you needed, but the authorisation is still valid.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "The authorisation is valid. Sell one Pack of Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D4_WrongItem"
+                },
+                {
+                  "variable": "SoldBeer_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "RefusedBeer_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "AskedTooMuch_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "0"
+                },
+                {
+                  "keyMomentText": "Sold one Pack of Giddy's to Fridgy after requesting slightly more SSI data than necessary.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_SoldAfterExtraData"
+              ]
+            },
+            {
+              "text": "The authorisation is valid, but I still refuse the sale.",
+              "effects": [
+                {
+                  "variable": "SoldBeer_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "RefusedBeer_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "keyMomentText": "Refused Fridgy even though Peter's SSI contained valid delegated authorisation.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_Refused"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D4_SSI_TooMuch",
+          "text": "That was way more information than you needed for one beer. Age, authorisation, one pack—that's it.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "The authorisation is still valid. Sell one Pack of Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D4_WrongItem"
+                },
+                {
+                  "variable": "SoldBeer_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "RefusedBeer_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "AskedTooMuch_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "keyMomentText": "Sold one Pack of Giddy's to Fridgy after requesting unnecessary owner data.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_SoldAfterTooMuch"
+              ]
+            },
+            {
+              "text": "The authorisation is valid, but I still refuse the sale.",
+              "effects": [
+                {
+                  "variable": "SoldBeer_D4",
+                  "value": "false"
+                },
+                {
+                  "variable": "RefusedBeer_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "keyMomentText": "Refused Fridgy even though Peter's SSI contained valid delegated authorisation.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_Refused"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D4_Sold",
+          "text": "Thanks. Peter gets his beer, the kiosk gets paid, and I look useful. Good day for everyone.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D4_SoldAfterExtraData",
+          "text": "Thanks. The sale is valid, though Peter may wonder why you needed the extra details.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D4_SoldAfterTooMuch",
+          "text": "Thanks. Beer secured. The privacy part could have gone better.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D4_Refused",
+          "text": "Alright, no sale. I'll let Peter know. Guess I'll be back tomorrow with my own SSI.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D4_WrongItem",
+          "text": "That's not what Peter asked for. One Pack of Giddy's, please.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Open wares for one Pack of Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D4_WrongItem"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_Sold"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "nodes": [
+        {
+          "id": "Fridgy_D5_Start",
+          "text": "Morning. How is the kiosk doing? Still making money, or should I start looking nervous on the owner's behalf?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "It's doing fine. What brings you back?",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "SoldBeer_D4",
+                  "value": "false"
+                }
+              ],
+              "nextNodes": [
+                "Fridgy_D5_OwnSSIIntro"
+              ]
+            },
+            {
+              "text": "It's doing fine. What brings you back?",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "SoldBeer_D4",
+                  "value": "true"
+                }
+              ],
+              "nextNodes": [
+                "Fridgy_D5_OwnerSSIIntro"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnSSIIntro",
+          "text": "You didn't accept Peter's SSI yesterday, so he registered one for me. It proves who I am and that I'm allowed to pick up one Pack of Giddy's. I'm officially paperwork now.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check Fridgy's new SSI.",
+              "effects": [
+                {
+                  "variable": "UsedOwnSSI_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Fridgy_D5_OwnSSI_Perfect",
+                  "goodNode": "Fridgy_D5_OwnSSI_Close",
+                  "badNode": "Fridgy_D5_OwnSSI_TooMuch"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "fridgy_own_ssi"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_WaitForOwnSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_WaitForOwnSSI",
+          "text": "Take your time. It's my first SSI, so try to look impressed.",
+          "requirements": [],
+          "options": []
+        },
+        {
+          "id": "Fridgy_D5_OwnSSI_Perfect",
+          "text": "Looks good. It proves who I am, that Peter is over 18, and that I'm allowed to collect one pack.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Everything matches. Sell one Pack of Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D5_WrongItemOwnSSI"
+                },
+                {
+                  "variable": "UsedOwnSSI_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Accepted Fridgy's own SSI and its limited authorisation, then sold one Pack of Giddy's.",
+                  "keyMomentPositive": true
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnSSISold"
+              ]
+            },
+            {
+              "text": "Look at you, officially documented. I'll sell the authorised pack.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D5_WrongItemOwnSSI"
+                },
+                {
+                  "variable": "UsedOwnSSI_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Accepted Fridgy's own SSI and its limited authorisation, then sold one Pack of Giddy's.",
+                  "keyMomentPositive": true
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "nextNodes": [
+                "Fridgy_D5_OwnSSISoldFriendly"
+              ]
+            },
+            {
+              "text": "The authorisation is valid, but I still refuse the sale.",
+              "effects": [
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnSSIRefused"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnSSI_Close",
+          "text": "You checked a little more than necessary, but everything needed is valid.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "The authorisation is valid. Sell one Pack of Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D5_WrongItemOwnSSI"
+                },
+                {
+                  "variable": "UsedOwnSSI_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "AskedTooMuch_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "0"
+                },
+                {
+                  "keyMomentText": "Accepted Fridgy's own SSI after requesting slightly more data than necessary.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnSSISoldExtra"
+              ]
+            },
+            {
+              "text": "The authorisation is valid, but I still refuse the sale.",
+              "effects": [
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnSSIRefused"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnSSI_TooMuch",
+          "text": "That was way more machine data than you needed. My identity, Peter's age check, and the authorisation were enough.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "The authorisation is still valid. Sell one Pack of Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D5_WrongItemOwnSSI"
+                },
+                {
+                  "variable": "UsedOwnSSI_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "AskedTooMuch_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "keyMomentText": "Sold beer after requesting unnecessary data from Fridgy's own SSI.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnSSISoldTooMuch"
+              ]
+            },
+            {
+              "text": "The authorisation is valid, but I still refuse the sale.",
+              "effects": [
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnSSIRefused"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnerSSIIntro",
+          "text": "Yesterday went smoothly, so Peter sent me back with a fresh one-use authorisation. He says he'll sort out my own SSI soon. I'm sure the paperwork is thrilled.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check Peter's fresh SSI authorisation.",
+              "effects": [
+                {
+                  "variable": "UsedOwnerSSI_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "day5_owner_delegation|alcohol",
+                  "perfectNode": "Fridgy_D5_OwnerSSI_Perfect",
+                  "goodNode": "Fridgy_D5_OwnerSSI_Close",
+                  "badNode": "Fridgy_D5_OwnerSSI_TooMuch"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "fresh_authorisation"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_WaitForOwnerSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_WaitForOwnerSSI",
+          "text": "Take your time. Yesterday's authorisation was one-use, so this one is new.",
+          "requirements": [],
+          "options": []
+        },
+        {
+          "id": "Fridgy_D5_OwnerSSI_Perfect",
+          "text": "Everything matches again. Peter's over 18, I'm authorised, and it's for one pack today.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Everything matches. Sell one Pack of Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D5_WrongItemOwnerSSI"
+                },
+                {
+                  "variable": "UsedOwnerSSI_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Accepted Peter's fresh delegated authorisation and sold one Pack of Giddy's to Fridgy.",
+                  "keyMomentPositive": true
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnerSSISold"
+              ]
+            },
+            {
+              "text": "Tell Peter to get you your own SSI next time. I'll sell it today.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D5_WrongItemOwnerSSI"
+                },
+                {
+                  "variable": "UsedOwnerSSI_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Accepted Peter's fresh delegated authorisation and sold one Pack of Giddy's to Fridgy.",
+                  "keyMomentPositive": true
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "nextNodes": [
+                "Fridgy_D5_OwnerSSISoldFriendly"
+              ]
+            },
+            {
+              "text": "I won't accept Peter's SSI again. Come back with your own.",
+              "effects": [
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnerSSIRefused"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnerSSI_Close",
+          "text": "You checked a little more than needed, but the new authorisation is valid.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "The authorisation is valid. Sell one Pack of Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D5_WrongItemOwnerSSI"
+                },
+                {
+                  "variable": "UsedOwnerSSI_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "AskedTooMuch_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "0"
+                },
+                {
+                  "keyMomentText": "Accepted Peter's fresh authorisation after requesting slightly more data than necessary.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnerSSISoldExtra"
+              ]
+            },
+            {
+              "text": "I won't accept Peter's SSI again. Come back with your own.",
+              "effects": [
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnerSSIRefused"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnerSSI_TooMuch",
+          "text": "That was more owner data than this needed. Age check, my name, one pack, today—that's enough.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "The authorisation is still valid. Sell one Pack of Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D5_WrongItemOwnerSSI"
+                },
+                {
+                  "variable": "UsedOwnerSSI_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "AskedTooMuch_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "keyMomentText": "Sold beer after requesting unnecessary data from Peter's fresh authorisation.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnerSSISoldTooMuch"
+              ]
+            },
+            {
+              "text": "I won't accept Peter's SSI again. Come back with your own.",
+              "effects": [
+                {
+                  "variable": "SoldBeer_D5",
+                  "value": "false"
+                },
+                {
+                  "variable": "RefusedBeer_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnerSSIRefused"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnSSISold",
+          "text": "Thanks. My own SSI worked, Peter gets his beer, and I'm now officially more organised than he is.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnSSISoldFriendly",
+          "text": "Look at that—my own SSI actually worked. Peter gets his beer, and I get to feel important for five minutes.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnSSISoldExtra",
+          "text": "Thanks. The sale worked, though you asked for more than you needed.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnSSISoldTooMuch",
+          "text": "Beer secured. My new SSI survived its first oversharing test.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnSSIRefused",
+          "text": "Seriously? I got my own SSI because you refused the other one. Fine—I'll tell Peter the beer mission failed again.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnerSSISold",
+          "text": "Thanks. Fresh authorisation, correct beer, no drama. Peter will be pleased.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnerSSISoldFriendly",
+          "text": "Deal. I'll remind Peter that even his fridge thinks I should have my own SSI.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnerSSISoldExtra",
+          "text": "Thanks. It worked, though Peter may ask why you needed the extra details.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnerSSISoldTooMuch",
+          "text": "Thanks. The beer is sorted. The privacy part, less so.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_OwnerSSIRefused",
+          "text": "Alright, no sale. I'll tell Peter to sort out my own SSI before sending me back.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_WrongItemOwnSSI",
+          "text": "That's not what I asked for. My SSI authorises one Pack of Giddy's.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Open wares for one Pack of Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D5_WrongItemOwnSSI"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnSSISold"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fridgy_D5_WrongItemOwnerSSI",
+          "text": "That's not what Peter asked for. The authorisation is for one Pack of Giddy's.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Open wares for one Pack of Giddy's.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D5_WrongItemOwnerSSI"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D5_OwnerSSISold"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7c96d0d0c25e5e741a97fef0ed1dd5b8
+guid: f6f984eac280fdb4a9da868bd0ed68f5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5727594162568790217
-    second: Fridgy_N copy_0
+      213: 5256665379793966577
+    second: Interface SSI Pending blank_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,9 +46,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fridgy_N copy_0
+      name: Interface SSI Pending blank_0
       rect:
         serializedVersion: 2
-        x: 34
+        x: 0
         y: 0
-        width: 983
-        height: 1027
+        width: 353
+        height: 422
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73f7c7a847f7380b0800000000000000
-      internalID: -5727594162568790217
+      spriteID: 1f596b9df4d63f840800000000000000
+      internalID: 5256665379793966577
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fridgy_N copy_0: -5727594162568790217
+      Interface SSI Pending blank_0: 5256665379793966577
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

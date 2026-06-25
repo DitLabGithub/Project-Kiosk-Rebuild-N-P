@@ -12,13 +12,25 @@
  
  "ssiProfiles": [
   {
+    "key": "own",
+    "data": {
+      "avatarPath": "Sprites/Avatars/Robin",
+      "ownerName": "Robin",
+      "age": 29,
+      "address": "19 Market District",
+      "personalID": "8394726105",
+      "valid": true
+    }
+  },
+  {
     "key": "day4_husband_ssi",
     "data": {
       "avatarPath": "Sprites/Avatars/RobinHusband",
       "ownerName": "Mark Vermeer",
       "age": 31,
       "address": "19 Market District",
-      "expiryDate": "2028-06-17"
+      "personalID": "5271938460",
+      "valid": true
     }
   }
 ],
