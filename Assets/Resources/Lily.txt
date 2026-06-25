@@ -10,7 +10,7 @@
   "hairColor": "Red",
   "eyeColor": "Blue",
 
-  "ssiProfiles": [
+"ssiProfiles": [
   {
     "key": "own",
     "data": {
@@ -39,11 +39,31 @@
     },
     {
       "key": "data_minimisation",
-      "text": "Lily believes SSI should only share the data needed for the specific request type."
+      "text": "Lily believes SSI checks should request only the fields needed for the specific order. A customer approving a request does not automatically make that request justified."
+    },
+    {
+      "key": "restricted_item_check",
+      "text": "Alcohol and cigarette SSI check: request picture, above 18, and valid credential."
+    },
+    {
+      "key": "parcel_check",
+      "text": "Parcel SSI check: request picture, name, address, and valid credential."
+    },
+    {
+      "key": "pid_guidance",
+      "text": "pID warning: pID is a highly sensitive personal identifier, similar to a BSN number. It should never be requested for normal kiosk transactions. The system allowing the request does not make it justified."
+    },
+    {
+      "key": "ssi_request_guidelines",
+      "text": "SSI request guide — alcohol/cigarettes: picture + above 18 + valid credential. Parcel: picture + name + address + valid credential. pID is never required for a normal kiosk order and requesting it can be an abuse of the verification process."
+    },
+    {
+      "key": "friendship_tab_help",
+      "text": "The required SSI fields for each order type are saved in Lily's details in the Friendship tab."
     },
     {
       "key": "expired_ssi",
-      "text": "Lily's Day 4 SSI credential is expired and should appear unusable during the SSI check."
+      "text": "Lily's Day 4 SSI credential is expired and should not be accepted for a parcel pickup."
     },
     {
       "key": "values_procedure",
@@ -52,14 +72,6 @@
     {
       "key": "complaint_threat",
       "text": "Lily threatened to file a complaint when the process slowed her down."
-    },
-    {
-      "key": "ssi_request_guidelines",
-      "text": "SSI request guide: for alcohol or cigarettes, check picture for comparison, above 18, and whether the credential is valid/not expired. For parcel pickup, check picture, name, and address."
-    },
-    {
-      "key": "friendship_tab_help",
-      "text": "If you are unsure what SSI data to request, check the friendship tab/details for help."
     }
   ],
   "variables": [
@@ -118,7 +130,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "Hi, alright. For who?",
+              "text": "Hi. Who is the parcel for?",
               "effects": [],
               "requirements": [],
               "nextNodes": [
@@ -129,11 +141,11 @@
         },
         {
           "id": "Lily_D2_SSI_Explanation_1",
-          "text": "You've probably heard about it by now, but I'm one of the early SSI testers.",
+          "text": "It's for me. You've probably heard about SSI by now. I'm one of the early testers.",
           "requirements": [],
           "options": [
             {
-              "text": "Continue.",
+              "text": "How does the check work?",
               "effects": [
                 {
                   "variable": "unlock_detail",
@@ -149,36 +161,111 @@
         },
         {
           "id": "Lily_D2_SSI_Explanation_2",
-          "text": "The nice thing is that I can choose how much data I share instead of showing everything. But you still need to know what fits the request.",
+          "text": "The main thing is that every order type needs different information. You should only request the fields needed for that specific order.",
           "requirements": [],
           "options": [
             {
-              "text": "Continue.",
-              "effects": [],
+              "text": "What is needed for restricted products?",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "data_minimisation"
+                }
+              ],
               "requirements": [],
               "nextNodes": [
-                "Lily_D2_SSI_Explanation_3"
+                "Lily_D2_Restricted_Check"
               ]
             }
           ]
         },
         {
-          "id": "Lily_D2_SSI_Explanation_3",
-          "text": "For alcohol or cigarettes, you check the picture, whether the person is above 18, and if the credential is still valid. For parcel pickup, you check picture, name, and address.",
+          "id": "Lily_D2_Restricted_Check",
+          "text": "For alcohol or cigarettes, request the person's picture, confirmation that they are above 18, and confirmation that the credential is still valid.",
           "requirements": [],
           "options": [
             {
-              "text": "Continue.",
+              "text": "And for a parcel?",
               "effects": [
                 {
                   "variable": "unlock_detail",
-                  "value": "data_minimisation"
+                  "value": "restricted_item_check"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_Parcel_Check"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_Parcel_Check",
+          "text": "For a parcel, request the picture, name, address, and confirmation that the credential is valid.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "What about the pID field?",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "parcel_check"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_PID_Explanation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_PID_Explanation",
+          "text": "There is also a pID field. Think of it like a personal identifier or BSN number. It is extremely sensitive, and you should never need to request it for a normal kiosk purchase or parcel pickup.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Then why can I request it?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_PID_Abuse_Explanation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_PID_Abuse_Explanation",
+          "text": "Because SSI lets the verifier request information, but that does not mean every request is justified. A customer might approve pID without understanding why you asked. That is exactly how the system can be abused.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "So I should never request pID here.",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "pid_guidance"
                 },
                 {
                   "variable": "unlock_detail",
                   "value": "ssi_request_guidelines"
                 }
               ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_PID_Final_Warning"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_PID_Final_Warning",
+          "text": "Exactly. No normal order at this kiosk requires pID. The button may be available, but using it would be an abuse of the verification process.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Only request what the order actually needs.",
+              "effects": [],
               "requirements": [],
               "nextNodes": [
                 "Lily_D2_Friendship_Tab_Reminder"
@@ -188,16 +275,12 @@
         },
         {
           "id": "Lily_D2_Friendship_Tab_Reminder",
-          "text": "If you ever get confused about what to ask for, you can always check the friendship tab for help.",
+          "text": "Exactly. I saved the full guide in my details. If you forget what an order needs, check the Friendship tab before finishing the SSI request.",
           "requirements": [],
           "options": [
             {
-              "text": "Got it.",
+              "text": "Got it. Let me check your parcel SSI.",
               "effects": [
-                {
-                  "variable": "unlock_detail",
-                  "value": "ssi_request_guidelines"
-                },
                 {
                   "variable": "unlock_detail",
                   "value": "friendship_tab_help"
@@ -212,11 +295,11 @@
         },
         {
           "id": "Lily_D2_Request_Reminder",
-          "text": "So, for this parcel pickup, check the SSI fields needed for a delivery pickup: picture, name, and address.",
+          "text": "For this parcel: picture, name, address, and valid credential. Nothing else.",
           "requirements": [],
           "options": [
             {
-              "text": "Check Lily’s SSI.",
+              "text": "Check Lily's SSI.",
               "effects": [
                 {
                   "variable": "open_ssi_tab",
@@ -235,17 +318,17 @@
         },
         {
           "id": "Lily_D2_WaitForSSI",
-          "text": "I'll wait while you finish the SSI check.",
+          "text": "I'll wait while you finish the parcel SSI check.",
           "requirements": [],
           "options": []
         },
         {
           "id": "Lily_D2_Close_Response",
-          "text": "That check was not quite right. Try again and focus on what this request actually needs.",
+          "text": "Close, but the parcel check is not complete yet. Check the notes and request picture, name, address, and a valid credential.",
           "requirements": [],
           "options": [
             {
-              "text": "Try the SSI check again.",
+              "text": "Try the parcel SSI check again.",
               "effects": [
                 {
                   "variable": "open_ssi_tab",
@@ -253,10 +336,6 @@
                   "perfectNode": "Lily_D2_Correct_Info_Response",
                   "goodNode": "Lily_D2_Close_Response",
                   "badNode": "Lily_D2_Too_Much_Response"
-                },
-                {
-                  "variable": "AskedTooMuch_D2",
-                  "value": "true"
                 }
               ],
               "requirements": [],
@@ -268,22 +347,39 @@
         },
         {
           "id": "Lily_D2_Too_Much_Response",
-          "text": "Something about that check is off. Try again and use the request notes if you need help.",
+          "text": "That request included information this parcel pickup does not need. Use only picture, name, address, and a valid credential. Remember that pID should never be requested for a normal kiosk order.",
           "requirements": [],
           "options": [
             {
-              "text": "Try the SSI check again.",
+              "text": "Try the parcel SSI check again.",
               "effects": [
+                {
+                  "variable": "AskedTooMuch_D2",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A verification requested unnecessary personal information. Please review the data requested during the recent SSI check."
+                },
+                {
+                  "keyMomentText": "Requested unnecessary personal data during Lily's parcel SSI tutorial.",
+                  "keyMomentPositive": false
+                },
                 {
                   "variable": "open_ssi_tab",
                   "value": "own|package",
                   "perfectNode": "Lily_D2_Correct_Info_Response",
                   "goodNode": "Lily_D2_Close_Response",
                   "badNode": "Lily_D2_Too_Much_Response"
-                },
-                {
-                  "variable": "AskedTooMuch_D2",
-                  "value": "true"
                 }
               ],
               "requirements": [],
@@ -295,11 +391,11 @@
         },
         {
           "id": "Lily_D2_Correct_Info_Response",
-          "text": "Great job. That is exactly the kind of check SSI is meant for. I still need my parcel, please.",
+          "text": "Perfect. Picture, name, address, and valid credential. That is exactly what this parcel pickup needed. I still need the parcel, please.",
           "requirements": [],
           "options": [
             {
-              "text": "I can hand over the parcel.",
+              "text": "Hand over the parcel.",
               "effects": [
                 {
                   "variable": "unlock_detail",
@@ -310,7 +406,7 @@
                   "value": "true"
                 },
                 {
-                  "keyMomentText": "Verified Lily's delivery pickup using only the necessary information.",
+                  "keyMomentText": "Verified Lily's parcel using picture, name, address, and credential validity without requesting unnecessary data.",
                   "keyMomentPositive": true
                 },
                 {
@@ -324,7 +420,7 @@
               ]
             },
             {
-              "text": "I can give you the parcel. RedWine is one of your favourites too.",
+              "text": "I can give you the parcel. Would you also like RedWine?",
               "effects": [
                 {
                   "variable": "unlock_detail",
@@ -340,7 +436,7 @@
         },
         {
           "id": "Lily_D2_Parcel_Ready",
-          "text": "Nice, finally got my parcel. I left my lunch jerky at the lab, so I have to get back there. I'm starving.",
+          "text": "Thanks. I left my lunch jerky at the lab, so I need to get back there before I starve.",
           "requirements": [],
           "options": [
             {
@@ -355,17 +451,17 @@
         },
         {
           "id": "Lily_D2_RedWine_Check_Needed",
-          "text": "RedWine? Sure, long day at the lab anyway. But that is alcohol, so you need to check my age separately before adding it.",
+          "text": "RedWine sounds good, but that is a separate alcohol order. For that check, request picture, above 18, and a valid credential. You do not need my name, address, or pID.",
           "requirements": [],
           "options": [
             {
-              "text": "Check age for RedWine.",
+              "text": "Check the alcohol requirements.",
               "effects": [
                 {
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Lily_D2_RedWine_Age_OK",
-                  "goodNode": "Lily_D2_RedWine_Age_OK",
+                  "goodNode": "Lily_D2_RedWine_Close",
                   "badNode": "Lily_D2_RedWine_Age_Bad"
                 }
               ],
@@ -378,17 +474,84 @@
         },
         {
           "id": "Lily_D2_RedWine_WaitForSSI",
-          "text": "I'll wait while you check the age requirement for the RedWine.",
+          "text": "I'll wait while you finish the alcohol SSI check.",
           "requirements": [],
           "options": []
         },
         {
-          "id": "Lily_D2_RedWine_Age_OK",
-          "text": "Perfect. Parcel pickup and alcohol age check are separate checks. That makes sense.",
+          "id": "Lily_D2_RedWine_Close",
+          "text": "Close, but the alcohol check needs picture, above 18, and a valid credential. Try again using only those fields.",
           "requirements": [],
           "options": [
             {
-              "text": "I can hand over the parcel and add the RedWine.",
+              "text": "Retry the alcohol SSI check.",
+              "effects": [
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Lily_D2_RedWine_Age_OK",
+                  "goodNode": "Lily_D2_RedWine_Close",
+                  "badNode": "Lily_D2_RedWine_Age_Bad"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_RedWine_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_RedWine_Age_Bad",
+          "text": "That alcohol check included unnecessary information. Use only picture, above 18, and a valid credential. Name, address, pID, and other unrelated fields are not needed.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Retry the alcohol SSI check.",
+              "effects": [
+                {
+                  "variable": "AskedTooMuch_D2",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A verification requested unnecessary personal information. Please review the data requested during the recent SSI check."
+                },
+                {
+                  "keyMomentText": "Requested unnecessary personal data during Lily's alcohol SSI tutorial.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "own|alcohol",
+                  "perfectNode": "Lily_D2_RedWine_Age_OK",
+                  "goodNode": "Lily_D2_RedWine_Close",
+                  "badNode": "Lily_D2_RedWine_Age_Bad"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_RedWine_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_RedWine_Age_OK",
+          "text": "Perfect. Picture, above 18, and valid credential. The parcel and alcohol checks are separate because they need different information.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Hand over the parcel and add the RedWine.",
               "effects": [
                 {
                   "variable": "GavePackage_D2",
@@ -407,7 +570,7 @@
                   "value": "1"
                 },
                 {
-                  "keyMomentText": "Verified Lily's parcel pickup and performed a separate age check before upselling RedWine.",
+                  "keyMomentText": "Completed separate minimal-data checks for Lily's parcel and RedWine order.",
                   "keyMomentPositive": true
                 },
                 {
@@ -423,31 +586,8 @@
           ]
         },
         {
-          "id": "Lily_D2_RedWine_Age_Bad",
-          "text": "That check was not quite right. Try the age check again and use the notes if you need help.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Retry the RedWine age check.",
-              "effects": [
-                {
-                  "variable": "open_ssi_tab",
-                  "value": "own|alcohol",
-                  "perfectNode": "Lily_D2_RedWine_Age_OK",
-                  "goodNode": "Lily_D2_RedWine_Age_OK",
-                  "badNode": "Lily_D2_RedWine_Age_Bad"
-                }
-              ],
-              "requirements": [],
-              "nextNodes": [
-                "Lily_D2_RedWine_WaitForSSI"
-              ]
-            }
-          ]
-        },
-        {
           "id": "Lily_D2_Upsell_Response",
-          "text": "Thanks. Parcel, RedWine, and then straight back to the lab before I eat my lunch jerky out of desperation.",
+          "text": "Thanks. Parcel, RedWine, and then straight back to the lab.",
           "requirements": [],
           "options": [
             {
@@ -497,7 +637,7 @@
         },
         {
           "id": "Lily_D4_New_Package",
-          "text": "Good to hear. The future's here! Anyway, I'm here to pick up another parcel. Try to be quick, I'm starving again and it's my break time.",
+          "text": "Good to hear. Anyway, I'm here to pick up another parcel. Same parcel check as before: picture, name, address, and a valid credential.",
           "requirements": [],
           "options": [
             {
@@ -527,7 +667,7 @@
         },
         {
           "id": "Lily_D4_SSI_Expired",
-          "text": "Wait, what do you mean it didn't go through? Does it say expired?",
+          "text": "Wait, what do you mean it didn't go through? The name and address are right. Does it say the credential is expired?",
           "requirements": [],
           "options": [
             {
@@ -862,7 +1002,7 @@
         },
         {
           "id": "Lily_D5_Deposit_Reminder",
-          "text": "Don't forget to double-scan the package, because you gave me one before without scanning it.",
+          "text": "Before we start, remember the parcel requirements saved in my details: picture, name, address, and valid credential.",
           "requirements": [
             {
               "variable": "DepositedID_D4",
@@ -890,7 +1030,7 @@
         },
         {
           "id": "Lily_D5_No_Deposit",
-          "text": "I was so happy when I got home last time, got my snacks ready and all. Anyway, I've come to pick up another parcel!",
+          "text": "I'm here to pick up another parcel. You already have the parcel requirements saved in my details: picture, name, address, and valid credential.",
           "requirements": [
             {
               "variable": "DepositedID_D4",
@@ -924,7 +1064,7 @@
         },
         {
           "id": "Lily_D5_Correct_Info",
-          "text": "Most definitely. I really appreciate your attention to detail. I still need the parcel, please.",
+          "text": "Exactly right: picture, name, address, and a valid credential. You did not request pID or anything else unnecessary. I still need the parcel, please.",
           "requirements": [],
           "options": [
             {
@@ -964,7 +1104,7 @@
         },
         {
           "id": "Lily_D5_Too_Much",
-          "text": "That check was not quite right. I still need the parcel, please.",
+          "text": "That check was close, but it did not match the parcel requirements exactly. Use picture, name, address, and valid credential.",
           "requirements": [],
           "options": [
             {
@@ -996,7 +1136,7 @@
         },
         {
           "id": "Lily_D5_Far_Too_Much",
-          "text": "That check really did not feel right. Please be more careful, but I still need the parcel.",
+          "text": "That was far too much information for a parcel pickup. You requested fields this order does not need. Remember that pID is never justified for a normal kiosk order.",
           "requirements": [],
           "options": [
             {
@@ -1041,7 +1181,7 @@
         },
         {
           "id": "Lily_D5_Parcel_Given_Correct",
-          "text": "Thank you. That was clean and careful. This is how SSI should feel.",
+          "text": "Thank you. That was a clean parcel check using only the required information.",
           "requirements": [],
           "options": [
             {
@@ -1056,7 +1196,7 @@
         },
         {
           "id": "Lily_D5_Parcel_Given_TooMuch",
-          "text": "Thanks. You got it done, but check the notes next time if you are unsure.",
+          "text": "Thanks. Check the saved order-type notes next time so the request matches exactly.",
           "requirements": [],
           "options": [
             {
@@ -1071,7 +1211,7 @@
         },
         {
           "id": "Lily_D5_Parcel_Given_FarTooMuch",
-          "text": "Thanks, but that check was not okay. Please use the request notes before checking the next customer.",
+          "text": "Thanks, but that verification was not acceptable. Use the saved order notes and never request pID for a normal kiosk transaction.",
           "requirements": [],
           "options": [
             {
@@ -1104,7 +1244,9 @@
       "presentWithCustomer": true,
       "credentialStatus": "Expired",
       "isUsable": false,
-      "note": "This SSI credential is expired and should not be accepted."
+      "note": "This SSI credential is expired and should not be accepted.",
+      "pID": "123456782"
     }
-  }
+  },
+  "pID": "123456782"
 }

@@ -54,11 +54,32 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentNPCIndex >= currentSchedule.npcOrder.Count)
         {
-            Debug.Log("Day complete");
-            UIManager.Instance.ShowLevelSelect();
-            Counter.Instance.Money = 0;
+            if (DayManager.Instance.DebugMode)
+            {
+                Debug.Log("Day complete");
+                UIManager.Instance.ShowLevelSelect();
+                Counter.Instance.Money = 0;
 
-            return;
+                return;
+            }
+            else
+            {
+                if (DayManager.Instance.currentDay + 1 > DayManager.Instance.schedules.Count)
+                {
+                    Debug.Log("Day complete");
+                    UIManager.Instance.ShowLevelSelect();
+                    Counter.Instance.Money = 0;
+
+                    return;
+                }
+                else
+                {
+                    StartCoroutine(DayManager.Instance.ShowDayTransitionPanel());
+                    UIManager.Instance.InitiateDay(DayManager.Instance.currentDay + 1);
+                    Counter.Instance.Money = 0;
+                    return;
+                }
+            }
         }
 
         string npcName =
@@ -427,5 +448,11 @@ public class DialogueManager : MonoBehaviour
         return variable != null
             ? variable.value
             : null;
+    }
+
+    public IEnumerator InitiateDayWithDelay(int day, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        StartDay(day);
     }
 }

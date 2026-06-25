@@ -109,12 +109,13 @@ public class UIManager : MonoBehaviour
         if (PF_LevelSelect != null)
         {
             Ref_LevelSelect = Instantiate(PF_LevelSelect, mainCanvas.transform).GetComponent<LevelSelect>();
-            Ref_LevelSelect.Day1.onClick.AddListener(() => InitiateDay(1));
+            Ref_LevelSelect.Day1.onClick.AddListener(() => { DayManager.Instance.StartIntroCutscene(); DayManager.Instance.DebugMode = true; });
             Ref_LevelSelect.Day2.onClick.AddListener(() => InitiateDay(2));
             Ref_LevelSelect.Day3.onClick.AddListener(() => InitiateDay(3));
             Ref_LevelSelect.Day4.onClick.AddListener(() => InitiateDay(4));
             Ref_LevelSelect.Day5.onClick.AddListener(() => InitiateDay(5));
             Ref_LevelSelect.Back.onClick.AddListener(ShowMainMenu);
+            Ref_LevelSelect.StartGame.onClick.AddListener(() => { DayManager.Instance.StartIntroCutscene(); DayManager.Instance.DebugMode = false; });
             Ref_LevelSelect.gameObject.SetActive(false);
         }
         if (PF_ID != null)

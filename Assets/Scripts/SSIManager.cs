@@ -24,7 +24,7 @@ public class SSIManager : MonoBehaviour
     private string goodNode;
     private string badNode;
 
-    private CustomSSIData currentSSI;
+    public CustomSSIData currentSSI;
 
 
     private void Awake()

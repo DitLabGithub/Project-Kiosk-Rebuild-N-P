@@ -9,4 +9,5 @@ public class LevelSelect : MonoBehaviour
     public Button Day4;
     public Button Day5;
     public Button Back;
+    public Button StartGame;
 }
