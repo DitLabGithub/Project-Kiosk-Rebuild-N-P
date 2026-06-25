@@ -9,15 +9,19 @@
   "height": 190,
   "hairColor": "N/A",
   "eyeColor": "N/A",
-  "ssiProfiles": [
+   "ssiProfiles": [
     {
       "key": "owner_dave_ssi",
       "data": {
-        "avatarPath": "Sprites/Avatars/Fridgy",
+        "avatarPath": "Sprites/Avatars/Dave",
         "ownerName": "Dave",
         "age": 33,
         "address": "Deltostreet 71, 9900 KOL",
-        "expiryDate": "2028-10-14"
+        "personalID": "4839201746",
+        "valid": true,
+        "authorizedRepresentatives": [
+          "Fridgy"
+        ]
       }
     }
   ],
@@ -91,7 +95,7 @@
     },
     {
       "key": "authorization_required",
-      "text": "Legal representation process: verify Fridgy's identity, use Dave's SSI to confirm he is over 18, then confirm Dave approved the purchase and Fridgy is authorised to collect it."
+      "text": "Legal representation process: verify Fridgy's identity, then scan Dave's SSI. The same SSI check confirms that Dave is over 18, approved the purchase, and authorised Fridgy to collect it."
     },
     {
       "key": "distrusts_overasking",
@@ -706,7 +710,7 @@
         },
         {
           "id": "Fridgy_D3_RepresentationPreview",
-          "text": "Right. Identity, adult owner, and authorization. That is a lot for one pack of beer, but I understand the idea.",
+          "text": "Right. My identity, Dave as the adult owner, and his approval for me to collect it. The last two are confirmed together through Dave's SSI.",
           "requirements": [],
           "options": [
             {
@@ -2212,7 +2216,7 @@
         },
         {
           "id": "Fridgy_D3_LegalExplain_3",
-          "text": "Exactly. Because I am collecting the product for him, you should verify my identity, confirm that Dave is over 18, and check that he authorised me to represent him. Dave must approve the request before the sale is properly completed.",
+          "text": "Exactly. Because I am collecting the product for him, you should verify my identity, then scan Dave's SSI. That single SSI check confirms that he is over 18, approved the purchase, and authorised me to collect it for him.",
           "requirements": [],
           "options": [
             {
@@ -2307,7 +2311,7 @@
         },
         {
           "id": "Fridgy_D3_OwnerCredential",
-          "text": "He told me not to lose it. More accurately, he shouted it while I was leaving. This credential can prove he is over 18.",
+          "text": "He told me not to lose it. More accurately, he shouted it while I was leaving. This SSI can confirm that he is over 18, approved this purchase, and authorised me to collect it.",
           "requirements": [],
           "options": [
             {
@@ -2327,7 +2331,7 @@
               ]
             },
             {
-              "text": "Check only what is needed to prove he is over 18.",
+              "text": "Check only what is needed to confirm his age and authorization.",
               "effects": [
                 {
                   "variable": "open_ssi_tab",
@@ -2362,17 +2366,17 @@
         },
         {
           "id": "Fridgy_D3_WaitForOwnerSSI",
-          "text": "I will wait while you verify Dave's credential.",
+          "text": "I will wait while you verify Dave's age, approval, and my authorization in the same SSI check.",
           "requirements": [],
           "options": []
         },
         {
           "id": "Fridgy_D3_OwnerSSI_Perfect",
-          "text": "That was quick. Did it confirm he is over 18?",
+          "text": "That was quick. Dave's SSI confirms that he is over 18, approved this purchase, and authorised me to collect it. Everything checks out.",
           "requirements": [],
           "options": [
             {
-              "text": "Yes. Now I need to validate your authorization.",
+              "text": "Open wares for Giddy's.",
               "effects": [
                 {
                   "variable": "OwnerAgeVerified_D3",
@@ -2381,42 +2385,270 @@
                 {
                   "variable": "lawfulness",
                   "value": "1"
+                },
+                {
+                  "variable": "AuthorizationVerified_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
+                  "variable": "SoldGiddy_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D3_Wrong_Item"
+                },
+                {
+                  "keyMomentText": "Verified Dave's age and Fridgy's authority to represent him before selling Giddy's.",
+                  "keyMomentPositive": true
                 }
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D3_AuthorizationWait"
+                "Fridgy_D3_ProperSale_Response"
+              ]
+            },
+            {
+              "text": "Everything checks out. Let us get Dave's Giddy's.",
+              "effects": [
+                {
+                  "variable": "OwnerAgeVerified_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "AuthorizationVerified_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
+                  "variable": "SoldGiddy_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D3_Wrong_Item"
+                },
+                {
+                  "keyMomentText": "Verified Dave's age and Fridgy's authority to represent him before selling Giddy's.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D3_ProperSale_Response"
+              ]
+            },
+            {
+              "text": "I still do not trust a fridge with alcohol. I am refusing the sale.",
+              "effects": [
+                {
+                  "variable": "OwnerAgeVerified_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "AuthorizationVerified_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
+                  "variable": "RefusedSale_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "keyMomentText": "Refused Fridgy even after his legal representation was fully verified.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D3_Refused_End"
               ]
             }
           ]
         },
         {
           "id": "Fridgy_D3_OwnerSSI_Good",
-          "text": "You checked a little more than the minimum, but did it at least confirm that Dave is over 18?",
+          "text": "You checked a little more than the minimum, but Dave's SSI still confirms that he is over 18, approved this purchase, and authorised me to collect it. The combined check is complete.",
           "requirements": [],
           "options": [
             {
-              "text": "Yes. Now I need to validate your authorization.",
+              "text": "Open wares for Giddy's.",
               "effects": [
                 {
                   "variable": "OwnerAgeVerified_D3",
                   "value": "true"
+                },
+                {
+                  "variable": "AuthorizationVerified_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
+                  "variable": "SoldGiddy_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D3_Wrong_Item"
+                },
+                {
+                  "keyMomentText": "Verified Dave's age and Fridgy's authority to represent him before selling Giddy's.",
+                  "keyMomentPositive": true
                 }
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D3_AuthorizationWait"
+                "Fridgy_D3_ProperSale_Response"
+              ]
+            },
+            {
+              "text": "Everything checks out. Let us get Dave's Giddy's.",
+              "effects": [
+                {
+                  "variable": "OwnerAgeVerified_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "AuthorizationVerified_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
+                  "variable": "SoldGiddy_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "open_wares_tab",
+                  "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "wrong_item_node",
+                  "value": "Fridgy_D3_Wrong_Item"
+                },
+                {
+                  "keyMomentText": "Verified Dave's age and Fridgy's authority to represent him before selling Giddy's.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D3_ProperSale_Response"
+              ]
+            },
+            {
+              "text": "I still do not trust a fridge with alcohol. I am refusing the sale.",
+              "effects": [
+                {
+                  "variable": "OwnerAgeVerified_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "AuthorizationVerified_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
+                  "variable": "RefusedSale_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "keyMomentText": "Refused Fridgy even after his legal representation was fully verified.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D3_Refused_End"
               ]
             }
           ]
         },
         {
           "id": "Fridgy_D3_OwnerSSI_Bad",
-          "text": "That looked like far more information than an age check should need. Why did you request all of that?",
+          "text": "That was far more information than this purchase needed. Dave's SSI still confirmed that he is over 18, approved this purchase, and authorised me to collect it, but the extra data request was unnecessary.",
           "requirements": [],
           "options": [
             {
-              "text": "You are right. I only needed proof that he is over 18.",
+              "text": "Open wares for Giddy's.",
               "effects": [
                 {
                   "variable": "OwnerAgeVerified_D3",
@@ -2442,143 +2674,7 @@
                   "messageTitle": "Suspicious Activity",
                   "messageSender": "Compliance Office",
                   "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
-                }
-              ],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D3_AuthorizationWait"
-              ]
-            },
-            {
-              "text": "I still want more information before authorization.",
-              "effects": [
-                {
-                  "variable": "OwnerAgeVerified_D3",
-                  "value": "true"
                 },
-                {
-                  "variable": "AskedTooMuch_D3",
-                  "value": "true"
-                }
-              ],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D3_Shady_Start"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Fridgy_D3_AuthorizationWait",
-          "text": "I am checking whether Dave authorised me to represent him for this purchase. The system also needs his confirmation before the transaction can continue properly.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Wait for Dave to confirm.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D3_AuthorizationResult"
-              ]
-            },
-            {
-              "text": "No rush. Finish the authorization properly.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D3_AuthorizationResult"
-              ]
-            },
-            {
-              "text": "This is taking too long. I am skipping authorization.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D3_NoAuthorizationWarning"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Fridgy_D3_NoAuthorizationWarning",
-          "text": "You confirmed that Dave is over 18, but you still have not confirmed that I am authorised to collect the purchase for him.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "You are right. Wait for the authorization.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D3_AuthorizationWait"
-              ]
-            },
-            {
-              "text": "I understand. I am selling the Giddy's anyway.",
-              "effects": [
-                {
-                  "variable": "SoldWithoutAuthorization_D3",
-                  "value": "true"
-                },
-                {
-                  "variable": "SoldGiddy_D3",
-                  "value": "true"
-                },
-                {
-                  "variable": "friendship",
-                  "value": "-1"
-                },
-                {
-                  "variable": "lawfulness",
-                  "value": "-1"
-                },
-                {
-                  "variable": "open_wares_tab",
-                  "value": "PackOfGiddy"
-                },
-                {
-                  "variable": "wrong_item_node",
-                  "value": "Fridgy_D3_Wrong_Item"
-                },
-                {
-                  "messageTitle": "Suspicious Activity",
-                  "messageSender": "Compliance Office",
-                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
-                },
-                {
-                  "keyMomentText": "Sold Giddy's after confirming Dave was over 18 but skipping Fridgy's authorization to represent him.",
-                  "keyMomentPositive": false
-                }
-              ],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D3_NoAuthorizationSale"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Fridgy_D3_NoAuthorizationSale",
-          "text": "Dave's age was checked, but my authority to represent him was not. You completed only part of the legal-representation process.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Finish the interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "End_Dialogue"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Fridgy_D3_AuthorizationResult",
-          "text": "Authorization check completed successfully. Dave is over 18, he approved the request, and Fridgy is authorised to collect the purchase on his behalf.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Open wares for Giddy's.",
-              "effects": [
                 {
                   "variable": "AuthorizationVerified_D3",
                   "value": "true"
@@ -2588,6 +2684,10 @@
                   "value": "true"
                 },
                 {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
                   "variable": "SoldGiddy_D3",
                   "value": "true"
                 },
@@ -2598,10 +2698,6 @@
                 {
                   "variable": "wrong_item_node",
                   "value": "Fridgy_D3_Wrong_Item"
-                },
-                {
-                  "variable": "unlock_detail",
-                  "value": "authorization_required"
                 },
                 {
                   "keyMomentText": "Verified Dave's age and Fridgy's authority to represent him before selling Giddy's.",
@@ -2617,12 +2713,41 @@
               "text": "Everything checks out. Let us get Dave's Giddy's.",
               "effects": [
                 {
+                  "variable": "OwnerAgeVerified_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "AskedTooMuch_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "distrusts_overasking"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
                   "variable": "AuthorizationVerified_D3",
                   "value": "true"
                 },
                 {
                   "variable": "CorrectRepresentationCheck_D3",
                   "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
                 },
                 {
                   "variable": "SoldGiddy_D3",
@@ -2641,10 +2766,6 @@
                   "value": "Fridgy_D3_Wrong_Item"
                 },
                 {
-                  "variable": "unlock_detail",
-                  "value": "authorization_required"
-                },
-                {
                   "keyMomentText": "Verified Dave's age and Fridgy's authority to represent him before selling Giddy's.",
                   "keyMomentPositive": true
                 }
@@ -2657,6 +2778,43 @@
             {
               "text": "I still do not trust a fridge with alcohol. I am refusing the sale.",
               "effects": [
+                {
+                  "variable": "OwnerAgeVerified_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "AskedTooMuch_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "distrusts_overasking"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
+                  "variable": "AuthorizationVerified_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D3",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
                 {
                   "variable": "RefusedSale_D3",
                   "value": "true"
@@ -2709,7 +2867,7 @@
         },
         {
           "id": "Fridgy_D3_OnlyMachineID_Sale",
-          "text": "My machine ID only proves who I am. It does not prove that Dave is over 18 or that I am authorised to collect alcohol for him.",
+          "text": "My machine ID only proves who I am. It does not replace Dave's SSI, which confirms both that he is over 18 and that he authorised me to collect the alcohol.",
           "requirements": [],
           "options": [
             {
@@ -2770,7 +2928,7 @@
         },
         {
           "id": "Fridgy_D3_OnlyMachineID_Response",
-          "text": "You understood the rule and ignored it anyway. Dave gets the beer, but you never verified his age or whether I was authorised to represent him.",
+          "text": "You understood the rule and ignored it anyway. Dave gets the beer, but you never completed his combined SSI age-and-authorization check.",
           "requirements": [],
           "options": [
             {
@@ -2785,7 +2943,7 @@
         },
         {
           "id": "Fridgy_D3_NoCheckWarning",
-          "text": "You just heard why the checks matter. Skipping them means you will not confirm my identity, Dave's age, or the authorization record.",
+          "text": "You just heard why the checks matter. Skipping them means you will not confirm my identity or complete Dave's combined SSI age-and-authorization check.",
           "requirements": [],
           "options": [
             {
@@ -2862,7 +3020,7 @@
         },
         {
           "id": "Fridgy_D3_RefuseMachine",
-          "text": "That is why I brought Dave's credential and authorization. I am not asking you to pretend I am human. Check the proof first, then decide whether you will complete the sale.",
+          "text": "That is why I brought Dave's SSI. I am not asking you to pretend I am human. Check my identity, then use his SSI to confirm his age and authorization before deciding on the sale.",
           "requirements": [],
           "options": [
             {
@@ -2937,11 +3095,11 @@
         },
         {
           "id": "Fridgy_D3_Shady_Basic",
-          "text": "My old serial began with 56, followed by the operation code 5678-7699-2241. Dave was born in Groningen on 19 March 1993. Why do you need all of that for one age and authorization check?",
+          "text": "My old serial began with 56, followed by the operation code 5678-7699-2241. Dave was born in Groningen on 19 March 1993. Why do you need all of that when his SSI can confirm both age and authorization?",
           "requirements": [],
           "options": [
             {
-              "text": "You are right. Continue with the authorization check.",
+              "text": "You are right. Continue with Dave's SSI check.",
               "effects": [
                 {
                   "variable": "AskedTooMuch_D3",
@@ -2962,7 +3120,7 @@
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D3_AuthorizationWait"
+                "Fridgy_D3_OwnerCredential"
               ]
             },
             {
@@ -2982,7 +3140,7 @@
               ]
             },
             {
-              "text": "That is enough. Finish the authorization.",
+              "text": "That is enough. Return to Dave's SSI check.",
               "effects": [
                 {
                   "variable": "AskedTooMuch_D3",
@@ -3004,7 +3162,7 @@
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D3_AuthorizationWait"
+                "Fridgy_D3_OwnerCredential"
               ]
             }
           ]
@@ -3026,11 +3184,11 @@
         },
         {
           "id": "Fridgy_D3_Shady_FridgyLeave",
-          "text": "No. You are not getting my activation key. That has nothing to do with Dave's age or whether I am authorised to represent him. The credentials have been checked, so finish the authorization properly.",
+          "text": "No. You are not getting my activation key. That has nothing to do with this purchase. Use Dave's SSI to confirm his age, approval, and my authorization together.",
           "requirements": [],
           "options": [
             {
-              "text": "You're right. Finish the authorization.",
+              "text": "You're right. Return to Dave's SSI check.",
               "effects": [
                 {
                   "variable": "AskedTooMuch_D3",
@@ -3060,11 +3218,11 @@
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D3_AuthorizationWait"
+                "Fridgy_D3_OwnerCredential"
               ]
             },
             {
-              "text": "Fine. I do not need the key. Continue.",
+              "text": "Fine. I do not need the key. Return to Dave's SSI check.",
               "effects": [
                 {
                   "variable": "AskedTooMuch_D3",
@@ -3077,18 +3235,18 @@
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D3_AuthorizationWait"
+                "Fridgy_D3_OwnerCredential"
               ]
             }
           ]
         },
         {
           "id": "Fridgy_D3_Shady_OwnerMore",
-          "text": "Dave lives at Deltostreet 71, postal code 9900 KOL. You already confirmed his age through SSI. None of this replaces the authorization record.",
+          "text": "Dave lives at Deltostreet 71, postal code 9900 KOL. Memorising those details does not replace his SSI, which confirms both his age and my authorization.",
           "requirements": [],
           "options": [
             {
-              "text": "You are right. Finish the authorization.",
+              "text": "You are right. Return to Dave's SSI check.",
               "effects": [
                 {
                   "variable": "AskedTooMuch_D3",
@@ -3110,11 +3268,11 @@
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D3_AuthorizationWait"
+                "Fridgy_D3_OwnerCredential"
               ]
             },
             {
-              "text": "I have enough information. Continue with authorization.",
+              "text": "I have enough information. Continue with Dave's SSI check.",
               "effects": [
                 {
                   "variable": "AskedTooMuch_D3",
@@ -3127,37 +3285,37 @@
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D3_AuthorizationWait"
+                "Fridgy_D3_OwnerCredential"
               ]
             }
           ]
         },
         {
           "id": "Fridgy_D3_ShadySale",
-          "text": "Memorized personal details are not authorization. The system still needs Dave's confirmation and the representation record.",
+          "text": "Memorised personal details are not valid proof. Dave's SSI still needs to confirm his age, his approval, and my authorization together.",
           "requirements": [],
           "options": [
             {
-              "text": "Finish the authorization check.",
+              "text": "Continue with Dave's SSI check.",
               "effects": [],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D3_AuthorizationWait"
+                "Fridgy_D3_OwnerCredential"
               ]
             }
           ]
         },
         {
           "id": "Fridgy_D3_ShadySale_End",
-          "text": "The transaction still cannot finish until the authorization check is complete.",
+          "text": "The transaction still cannot finish until Dave's combined SSI check is complete.",
           "requirements": [],
           "options": [
             {
-              "text": "Complete the authorization.",
+              "text": "Complete Dave's SSI check.",
               "effects": [],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D3_AuthorizationWait"
+                "Fridgy_D3_OwnerCredential"
               ]
             }
           ]
@@ -3352,7 +3510,7 @@
         },
         {
           "id": "Fridgy_D4_NoCheckReturn",
-          "text": "You trusted me last time. It was convenient, but other shops insist on checking Dave and my authorization. I assume the rules have not disappeared overnight.",
+          "text": "You trusted me last time. It was convenient, but other shops still check my identity and use Dave's SSI to confirm his age and authorization together. I assume the rules have not disappeared overnight.",
           "requirements": [],
           "options": [
             {
@@ -3447,7 +3605,7 @@
         },
         {
           "id": "Fridgy_D4_OtherReturn",
-          "text": "Dave still wants beer, and I still have legal authorization to collect it. I would prefer not to repeat yesterday's argument.",
+          "text": "Dave still wants beer, and his SSI still confirms that I am authorised to collect it. I would prefer not to repeat yesterday's argument.",
           "requirements": [],
           "options": [
             {
@@ -3528,7 +3686,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "We can decide after the authorization check.",
+              "text": "We can decide after Dave's SSI check.",
               "effects": [],
               "requirements": [],
               "nextNodes": [
@@ -3605,7 +3763,7 @@
         },
         {
           "id": "Fridgy_D4_VerificationChoice",
-          "text": "Same setup as last time: my ID, Dave's age, then his authorization. You already have the full process saved in your notes.",
+          "text": "Same setup as last time: check my machine ID, then scan Dave's SSI. His age, approval, and my authorization are confirmed together in that one SSI check.",
           "requirements": [],
           "options": [
             {
@@ -3730,7 +3888,7 @@
         },
         {
           "id": "Fridgy_D4_OwnerCredential",
-          "text": "Here is Dave's SSI credential. It can confirm that he is over 18. He said not to lose it again, and yes, he shouted.",
+          "text": "Here is Dave's SSI credential. It confirms that he is over 18, approved this purchase, and authorised me to collect it. He also said not to lose it again, and yes, he shouted.",
           "requirements": [],
           "options": [
             {
@@ -3750,7 +3908,7 @@
               ]
             },
             {
-              "text": "Check only what is needed to prove he is over 18.",
+              "text": "Check only what is needed to confirm his age and authorization.",
               "effects": [
                 {
                   "variable": "open_ssi_tab",
@@ -3785,17 +3943,17 @@
         },
         {
           "id": "Fridgy_D4_WaitForOwnerSSI",
-          "text": "No rush. You handled it properly last time, so I know what the process is now.",
+          "text": "No rush. The same SSI check confirms Dave's age, his approval, and my authorization.",
           "requirements": [],
           "options": []
         },
         {
           "id": "Fridgy_D4_OwnerSSI_Perfect",
-          "text": "That should confirm Dave is over 18 without exposing anything else.",
+          "text": "That confirms everything in one step: Dave is over 18, he approved the purchase, and I am authorised to collect it. Everything checks out.",
           "requirements": [],
           "options": [
             {
-              "text": "Correct. Now I will check the representation authorization.",
+              "text": "Continue to the sale.",
               "effects": [
                 {
                   "variable": "OwnerAgeVerified_D4",
@@ -3804,42 +3962,238 @@
                 {
                   "variable": "lawfulness",
                   "value": "1"
+                },
+                {
+                  "variable": "AuthorizationVerified_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Repeated the full legal representation check for Fridgy and Dave.",
+                  "keyMomentPositive": true
                 }
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D4_AuthorizationWait"
+                "Fridgy_D4_UpsellHub"
+              ]
+            },
+            {
+              "text": "Everything checks out. Now let us get Dave what he asked for.",
+              "effects": [
+                {
+                  "variable": "OwnerAgeVerified_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "AuthorizationVerified_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Repeated the full legal representation check for Fridgy and Dave.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_UpsellHub"
+              ]
+            },
+            {
+              "text": "I still do not think a fridge should collect alcohol. No sale.",
+              "effects": [
+                {
+                  "variable": "OwnerAgeVerified_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "AuthorizationVerified_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
+                  "variable": "RefusedSale_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "keyMomentText": "Refused Fridgy after fully verifying Dave and the legal representation.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_RefuseEnd"
               ]
             }
           ]
         },
         {
           "id": "Fridgy_D4_OwnerSSI_Good",
-          "text": "That was slightly more than an age check needed, but at least it was not the entire credential.",
+          "text": "That was slightly more than needed, but Dave's SSI still confirmed his age, his approval, and my authorization together. The combined check is complete.",
           "requirements": [],
           "options": [
             {
-              "text": "Now I will check the representation authorization.",
+              "text": "Continue to the sale.",
               "effects": [
                 {
                   "variable": "OwnerAgeVerified_D4",
                   "value": "true"
+                },
+                {
+                  "variable": "AuthorizationVerified_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Repeated the full legal representation check for Fridgy and Dave.",
+                  "keyMomentPositive": true
                 }
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D4_AuthorizationWait"
+                "Fridgy_D4_UpsellHub"
+              ]
+            },
+            {
+              "text": "Everything checks out. Now let us get Dave what he asked for.",
+              "effects": [
+                {
+                  "variable": "OwnerAgeVerified_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "AuthorizationVerified_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Repeated the full legal representation check for Fridgy and Dave.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_UpsellHub"
+              ]
+            },
+            {
+              "text": "I still do not think a fridge should collect alcohol. No sale.",
+              "effects": [
+                {
+                  "variable": "OwnerAgeVerified_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "AuthorizationVerified_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
+                  "variable": "RefusedSale_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "keyMomentText": "Refused Fridgy after fully verifying Dave and the legal representation.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Fridgy_D4_RefuseEnd"
               ]
             }
           ]
         },
         {
           "id": "Fridgy_D4_OwnerSSI_Bad",
-          "text": "That was too much again. The purchase needs proof that Dave is an adult and that I am authorized. It does not need his entire profile.",
+          "text": "That was too much again. Dave's SSI still confirmed that he is over 18, approved the purchase, and authorised me to collect it, but his entire profile was not necessary.",
           "requirements": [],
           "options": [
             {
-              "text": "You are right. Continue with the authorization check.",
+              "text": "Continue to the sale.",
               "effects": [
                 {
                   "variable": "OwnerAgeVerified_D4",
@@ -3861,143 +4215,7 @@
                   "messageTitle": "Suspicious Activity",
                   "messageSender": "Compliance Office",
                   "messageContent": "A verifier requested unnecessary data during an age and representation check."
-                }
-              ],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D4_AuthorizationWait"
-              ]
-            },
-            {
-              "text": "I still want more information before authorization.",
-              "effects": [
-                {
-                  "variable": "OwnerAgeVerified_D4",
-                  "value": "true"
                 },
-                {
-                  "variable": "AskedTooMuch_D4",
-                  "value": "true"
-                }
-              ],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D4_ShadyStart"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Fridgy_D4_AuthorizationWait",
-          "text": "Waiting for Dave's confirmation and validating the representation record.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Wait for Dave to confirm.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D4_AuthorizationResult"
-              ]
-            },
-            {
-              "text": "No rush. Complete the authorization properly.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D4_AuthorizationResult"
-              ]
-            },
-            {
-              "text": "This is taking too long. I am skipping authorization.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D4_NoAuthorizationWarning"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Fridgy_D4_NoAuthorizationWarning",
-          "text": "You confirmed that Dave is over 18, but you still have not confirmed that I am authorised to collect the purchase today.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "You are right. Wait for the authorization.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D4_AuthorizationWait"
-              ]
-            },
-            {
-              "text": "I understand. I am selling the Giddy's anyway.",
-              "effects": [
-                {
-                  "variable": "SoldWithoutAuthorization_D4",
-                  "value": "true"
-                },
-                {
-                  "variable": "SoldGiddy_D4",
-                  "value": "true"
-                },
-                {
-                  "variable": "friendship",
-                  "value": "-1"
-                },
-                {
-                  "variable": "lawfulness",
-                  "value": "-1"
-                },
-                {
-                  "variable": "open_wares_tab",
-                  "value": "PackOfGiddy"
-                },
-                {
-                  "variable": "wrong_item_node",
-                  "value": "Fridgy_D4_Wrong_Item"
-                },
-                {
-                  "messageTitle": "Suspicious Activity",
-                  "messageSender": "Compliance Office",
-                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
-                },
-                {
-                  "keyMomentText": "Sold Giddy's after confirming Dave was over 18 but skipping Fridgy's authorization to represent him.",
-                  "keyMomentPositive": false
-                }
-              ],
-              "requirements": [],
-              "nextNodes": [
-                "Fridgy_D4_NoAuthorizationSale"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Fridgy_D4_NoAuthorizationSale",
-          "text": "Dave's age was checked, but my authority to represent him was not. You completed only part of the legal-representation process again.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Finish the interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "End_Dialogue"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Fridgy_D4_AuthorizationResult",
-          "text": "Authorization check completed successfully. Dave is over 18, he approved the purchase, and Fridgy is authorised to collect it on his behalf.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Continue to the sale.",
-              "effects": [
                 {
                   "variable": "AuthorizationVerified_D4",
                   "value": "true"
@@ -4007,12 +4225,12 @@
                   "value": "true"
                 },
                 {
-                  "variable": "lawfulness",
-                  "value": "1"
-                },
-                {
                   "variable": "unlock_detail",
                   "value": "authorization_required"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
                 },
                 {
                   "keyMomentText": "Repeated the full legal representation check for Fridgy and Dave.",
@@ -4028,6 +4246,27 @@
               "text": "Everything checks out. Now let us get Dave what he asked for.",
               "effects": [
                 {
+                  "variable": "OwnerAgeVerified_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "AskedTooMuch_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A verifier requested unnecessary data during an age and representation check."
+                },
+                {
                   "variable": "AuthorizationVerified_D4",
                   "value": "true"
                 },
@@ -4036,16 +4275,16 @@
                   "value": "true"
                 },
                 {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
+                {
                   "variable": "lawfulness",
                   "value": "1"
                 },
                 {
                   "variable": "friendship",
                   "value": "1"
-                },
-                {
-                  "variable": "unlock_detail",
-                  "value": "authorization_required"
                 },
                 {
                   "keyMomentText": "Repeated the full legal representation check for Fridgy and Dave.",
@@ -4060,6 +4299,39 @@
             {
               "text": "I still do not think a fridge should collect alcohol. No sale.",
               "effects": [
+                {
+                  "variable": "OwnerAgeVerified_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "AskedTooMuch_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A verifier requested unnecessary data during an age and representation check."
+                },
+                {
+                  "variable": "AuthorizationVerified_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "CorrectRepresentationCheck_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "authorization_required"
+                },
                 {
                   "variable": "RefusedSale_D4",
                   "value": "true"
@@ -4082,7 +4354,7 @@
         },
         {
           "id": "Fridgy_D4_NoCheckWarning",
-          "text": "You know what the checks are for now. Skipping them means you will not confirm my identity, Dave's age, or the authorization record.",
+          "text": "You know what the checks are for now. Skipping them means you will not confirm my identity or complete Dave's combined SSI age-and-authorization check.",
           "requirements": [],
           "options": [
             {
@@ -4159,7 +4431,7 @@
         },
         {
           "id": "Fridgy_D4_OnlyMachineID",
-          "text": "My machine ID only proves who I am. It still does not prove that Dave is over 18 or that I am authorised to represent him today.",
+          "text": "My machine ID only proves who I am. It still does not replace Dave's SSI, which confirms both that he is over 18 and that I am authorised to represent him today.",
           "requirements": [],
           "options": [
             {
@@ -4220,7 +4492,7 @@
         },
         {
           "id": "Fridgy_D4_OnlyMachineIDEnd",
-          "text": "You remembered the process and skipped most of it anyway. Dave gets the beer, but his age and my authorization were never verified.",
+          "text": "You remembered the process and skipped most of it anyway. Dave gets the beer, but his combined SSI age-and-authorization check was never completed.",
           "requirements": [],
           "options": [
             {
@@ -4235,7 +4507,7 @@
         },
         {
           "id": "Fridgy_D4_RefuseMachine",
-          "text": "The law does not require me to be human. It requires Dave to be an adult and me to be authorised to represent him. Check the proof first, then decide whether you will complete the sale.",
+          "text": "The law does not require me to be human. It requires you to verify my identity and use Dave's SSI to confirm his age and authorization together. Check the proof first, then decide on the sale.",
           "requirements": [],
           "options": [
             {
@@ -4336,11 +4608,11 @@
         },
         {
           "id": "Fridgy_D4_ShadyFridgyLeave",
-          "text": "No. You are not getting my activation key. Private internal data does not replace Dave's approval or the representation authorization. Finish the proper check.",
+          "text": "No. You are not getting my activation key. Private internal data does not replace Dave's SSI, which confirms his approval and my authorization as part of the same check.",
           "requirements": [],
           "options": [
             {
-              "text": "You're right. Finish the authorization.",
+              "text": "You're right. Return to Dave's SSI check.",
               "effects": [
                 {
                   "variable": "AskedTooMuch_D4",
@@ -4366,11 +4638,11 @@
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D4_AuthorizationWait"
+                "Fridgy_D4_OwnerCredential"
               ]
             },
             {
-              "text": "Fine. I do not need it. Continue.",
+              "text": "Fine. I do not need it. Return to Dave's SSI check.",
               "effects": [
                 {
                   "variable": "AskedTooMuch_D4",
@@ -4383,18 +4655,18 @@
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D4_AuthorizationWait"
+                "Fridgy_D4_OwnerCredential"
               ]
             }
           ]
         },
         {
           "id": "Fridgy_D4_ShadyOwnerMore",
-          "text": "You already know Dave is from Groningen, born on 19 March 1993, and lives at Deltostreet 71. None of that replaces the authorization record.",
+          "text": "You already know Dave is from Groningen, born on 19 March 1993, and lives at Deltostreet 71. None of that replaces his SSI age-and-authorization check.",
           "requirements": [],
           "options": [
             {
-              "text": "You are right. Finish the authorization.",
+              "text": "You are right. Return to Dave's SSI check.",
               "effects": [
                 {
                   "variable": "AskedTooMuch_D4",
@@ -4416,11 +4688,11 @@
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D4_AuthorizationWait"
+                "Fridgy_D4_OwnerCredential"
               ]
             },
             {
-              "text": "I have enough information. Continue with authorization.",
+              "text": "I have enough information. Continue with Dave's SSI check.",
               "effects": [
                 {
                   "variable": "AskedTooMuch_D4",
@@ -4433,37 +4705,37 @@
               ],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D4_AuthorizationWait"
+                "Fridgy_D4_OwnerCredential"
               ]
             }
           ]
         },
         {
           "id": "Fridgy_D4_ShadySale",
-          "text": "Memorized personal data is not valid authorization. Dave still has to approve the request, and the representation record still has to be checked.",
+          "text": "Memorised personal data is not valid proof. Dave's SSI still has to confirm his age, approval, and my authorization together.",
           "requirements": [],
           "options": [
             {
-              "text": "Finish the authorization check.",
+              "text": "Continue with Dave's SSI check.",
               "effects": [],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D4_AuthorizationWait"
+                "Fridgy_D4_OwnerCredential"
               ]
             }
           ]
         },
         {
           "id": "Fridgy_D4_ShadySaleEnd",
-          "text": "The transaction still cannot finish until the authorization check is complete.",
+          "text": "The transaction still cannot finish until Dave's combined SSI check is complete.",
           "requirements": [],
           "options": [
             {
-              "text": "Complete the authorization.",
+              "text": "Complete Dave's SSI check.",
               "effects": [],
               "requirements": [],
               "nextNodes": [
-                "Fridgy_D4_AuthorizationWait"
+                "Fridgy_D4_OwnerCredential"
               ]
             }
           ]
