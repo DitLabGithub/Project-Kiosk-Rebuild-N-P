@@ -1232,8 +1232,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Shaun_D3_SSI_Perfect",
-                  "goodNode": "Shaun_D3_SSI_Good",
-                  "badNode": "Shaun_D3_SSI_Bad"
+                  "moreNode": "Shaun_D3_SSI_Too_Much",
+                  "lessNode": "Shaun_D3_SSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -1255,8 +1255,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Shaun_D3_SSI_Perfect",
-                  "goodNode": "Shaun_D3_SSI_Good",
-                  "badNode": "Shaun_D3_SSI_Bad"
+                  "moreNode": "Shaun_D3_SSI_Too_Much",
+                  "lessNode": "Shaun_D3_SSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -1278,8 +1278,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Shaun_D3_SSI_Perfect",
-                  "goodNode": "Shaun_D3_SSI_Good",
-                  "badNode": "Shaun_D3_SSI_Bad"
+                  "moreNode": "Shaun_D3_SSI_Too_Much",
+                  "lessNode": "Shaun_D3_SSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -1313,8 +1313,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Shaun_D3_SSI_Perfect",
-                  "goodNode": "Shaun_D3_SSI_Good",
-                  "badNode": "Shaun_D3_SSI_Bad"
+                  "moreNode": "Shaun_D3_SSI_Too_Much",
+                  "lessNode": "Shaun_D3_SSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -1348,8 +1348,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Shaun_D3_SSI_Perfect",
-                  "goodNode": "Shaun_D3_SSI_Good",
-                  "badNode": "Shaun_D3_SSI_Bad"
+                  "moreNode": "Shaun_D3_SSI_Too_Much",
+                  "lessNode": "Shaun_D3_SSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -1367,7 +1367,7 @@
         },
         {
           "id": "Shaun_D3_SSI_Perfect",
-          "text": "Bravo, you're great at this. I need one pack of Giddy's. You can sell just that, or add Blueports as my favourite-item upsell.",
+          "text": "Bravo, you asked for exactly what you needed. I need one pack of Giddy's. You can sell just that, or add Blueports as my favourite-item upsell.",
           "requirements": [],
           "options": [
             {
@@ -1407,8 +1407,8 @@
           ]
         },
         {
-          "id": "Shaun_D3_SSI_Good",
-          "text": "You didn't hit every SSI mark there, but I don't care either, so it's fine. I need one pack of Giddy's. You can sell just that, or add Blueports too.",
+          "id": "Shaun_D3_SSI_Too_Much",
+          "text": "Yeah, you asked for more SSI info than you needed, but I don't really care either, so it's fine. I need one pack of Giddy's. You can sell just that, or add Blueports too.",
           "requirements": [],
           "options": [
             {
@@ -1448,8 +1448,8 @@
           ]
         },
         {
-          "id": "Shaun_D3_SSI_Bad",
-          "text": "Ummmm... okay?! Anyway, I need one pack of Giddy's. You can sell just that, or add Blueports too.",
+          "id": "Shaun_D3_SSI_Not_Enough",
+          "text": "You didn't ask for enough SSI info there, but I don't really care either. Anyway, I need one pack of Giddy's. You can sell just that, or add Blueports too.",
           "requirements": [],
           "options": [
             {
@@ -2051,8 +2051,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Shaun_D4_SSI_Perfect",
-                  "goodNode": "Shaun_D4_SSI_Good",
-                  "badNode": "Shaun_D4_SSI_Bad"
+                  "moreNode": "Shaun_D4_SSI_Too_Much",
+                  "lessNode": "Shaun_D4_SSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -2074,8 +2074,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Shaun_D4_SSI_Perfect",
-                  "goodNode": "Shaun_D4_SSI_Good",
-                  "badNode": "Shaun_D4_SSI_Bad"
+                  "moreNode": "Shaun_D4_SSI_Too_Much",
+                  "lessNode": "Shaun_D4_SSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -2105,8 +2105,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Shaun_D4_SSI_Perfect",
-                  "goodNode": "Shaun_D4_SSI_Good",
-                  "badNode": "Shaun_D4_SSI_Bad"
+                  "moreNode": "Shaun_D4_SSI_Too_Much",
+                  "lessNode": "Shaun_D4_SSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -2136,8 +2136,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Shaun_D4_SSI_Perfect",
-                  "goodNode": "Shaun_D4_SSI_Good",
-                  "badNode": "Shaun_D4_SSI_Bad"
+                  "moreNode": "Shaun_D4_SSI_Too_Much",
+                  "lessNode": "Shaun_D4_SSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -2155,7 +2155,7 @@
         },
         {
           "id": "Shaun_D4_SSI_Perfect",
-          "text": "Bravo, you're great at this. I need one pack of Giddy's. You can sell just that, or add Blueports as my favourite-item upsell.",
+          "text": "Bravo, you asked for exactly what you needed. I need one pack of Giddy's. You can sell just that, or add Blueports as my favourite-item upsell.",
           "requirements": [],
           "options": [
             {
@@ -2195,8 +2195,8 @@
           ]
         },
         {
-          "id": "Shaun_D4_SSI_Good",
-          "text": "You didn't hit every SSI mark there, but I don't care either, so it's fine. I need one pack of Giddy's. You can sell just that, or add Blueports too.",
+          "id": "Shaun_D4_SSI_Too_Much",
+          "text": "Yeah, you asked for more SSI info than you needed, but I don't really care either, so it's fine. I need one pack of Giddy's. You can sell just that, or add Blueports too.",
           "requirements": [],
           "options": [
             {
@@ -2236,8 +2236,8 @@
           ]
         },
         {
-          "id": "Shaun_D4_SSI_Bad",
-          "text": "Ummmm... okay?! Anyway, I need one pack of Giddy's. You can sell just that, or add Blueports too.",
+          "id": "Shaun_D4_SSI_Not_Enough",
+          "text": "You didn't ask for enough SSI info there, but I don't really care either. Anyway, I need one pack of Giddy's. You can sell just that, or add Blueports too.",
           "requirements": [],
           "options": [
             {

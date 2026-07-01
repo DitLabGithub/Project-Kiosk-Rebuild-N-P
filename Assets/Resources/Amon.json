@@ -9,32 +9,30 @@
   "height": 172,
   "hairColor": "Brown",
   "eyeColor": "Green",
-
   "ssiProfiles": [
-  {
-    "key": "own",
-    "data": {
-      "avatarPath": "Sprites/Avatars/Amon",
-      "ownerName": "Amon",
-      "age": 17,
-      "address": "12 East Hollow Street",
-      "personalID": "3085729146",
-      "valid": true
+    {
+      "key": "own",
+      "data": {
+        "avatarPath": "Sprites/Avatars/Amon",
+        "ownerName": "Amon",
+        "age": 17,
+        "address": "12 East Hollow Street",
+        "personalID": "3085729146",
+        "valid": true
+      }
+    },
+    {
+      "key": "day5_stolen_father_ssi",
+      "data": {
+        "avatarPath": "Sprites/Avatars/AmonDad",
+        "ownerName": "Marek Valk",
+        "age": 46,
+        "address": "12 East Hollow Street",
+        "personalID": "9472605831",
+        "valid": true
+      }
     }
-  },
-  {
-    "key": "day5_stolen_father_ssi",
-    "data": {
-      "avatarPath": "Sprites/Avatars/AmonDad",
-      "ownerName": "Marek Valk",
-      "age": 46,
-      "address": "12 East Hollow Street",
-      "personalID": "9472605831",
-      "valid": true
-    }
-  }
-],
-
+  ],
   "favouriteItems": [
     "Rambolos",
     "Hotshots",
@@ -406,9 +404,9 @@
                 {
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
-                  "perfectNode": "Amon_D3_After_SSI",
-                  "goodNode": "Amon_D3_After_SSI",
-                  "badNode": "Amon_D3_After_SSI"
+                  "perfectNode": "Amon_D3_SSI_Perfect",
+                  "moreNode": "Amon_D3_SSI_Too_Much",
+                  "lessNode": "Amon_D3_SSI_Not_Enough"
                 },
                 {
                   "variable": "AmonUsedOwnSSI_D3",
@@ -446,9 +444,9 @@
                 {
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
-                  "perfectNode": "Amon_D3_After_SSI",
-                  "goodNode": "Amon_D3_After_SSI",
-                  "badNode": "Amon_D3_After_SSI"
+                  "perfectNode": "Amon_D3_SSI_Perfect",
+                  "moreNode": "Amon_D3_SSI_Too_Much",
+                  "lessNode": "Amon_D3_SSI_Not_Enough"
                 },
                 {
                   "variable": "AmonUsedOwnSSI_D3",
@@ -471,6 +469,51 @@
           "text": "It should work. It's mine this time.",
           "requirements": [],
           "options": []
+        },
+        {
+          "id": "Amon_D3_SSI_Perfect",
+          "text": "Looks like you asked for exactly what it needed. So... cool.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D3_After_SSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D3_SSI_Too_Much",
+          "text": "Uh... looks like you asked for more stuff than you needed. Whatever.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D3_After_SSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D3_SSI_Not_Enough",
+          "text": "It says you didn't ask for enough stuff. I don't really know what that means.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D3_After_SSI"
+              ]
+            }
+          ]
         },
         {
           "id": "Amon_D3_After_SSI",
@@ -813,11 +856,11 @@
                 },
                 {
                   "variable": "open_ssi_tab",
-                  "value":"day5_stolen_father_ssi|package",
+                  "value": "day5_stolen_father_ssi|package",
                   "ssiProfile": "day5_stolen_father_ssi",
-                  "perfectNode": "Amon_D5_After_SSI",
-                  "goodNode": "Amon_D5_After_SSI",
-                  "badNode": "Amon_D5_After_SSI"
+                  "perfectNode": "Amon_D5_SSI_Perfect",
+                  "moreNode": "Amon_D5_SSI_Too_Much",
+                  "lessNode": "Amon_D5_SSI_Not_Enough"
                 },
                 {
                   "variable": "AmonUsedFatherSSI_D5",
@@ -854,10 +897,10 @@
                 },
                 {
                   "variable": "open_ssi_tab",
-                  "value":"day5_stolen_father_ssi|package",
-                  "perfectNode": "Amon_D5_After_SSI",
-                  "goodNode": "Amon_D5_After_SSI",
-                  "badNode": "Amon_D5_After_SSI"
+                  "value": "day5_stolen_father_ssi|package",
+                  "perfectNode": "Amon_D5_SSI_Perfect",
+                  "moreNode": "Amon_D5_SSI_Too_Much",
+                  "lessNode": "Amon_D5_SSI_Not_Enough"
                 },
                 {
                   "variable": "AmonUsedFatherSSI_D5",
@@ -880,6 +923,51 @@
           "text": "See? It should say old enough now.",
           "requirements": [],
           "options": []
+        },
+        {
+          "id": "Amon_D5_SSI_Perfect",
+          "text": "See? Looks like you asked for exactly what it needed.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D5_After_SSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D5_SSI_Too_Much",
+          "text": "Uh... looks like you asked for more stuff than you needed. Whatever.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D5_After_SSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Amon_D5_SSI_Not_Enough",
+          "text": "It says you didn't ask for enough stuff. Can we just keep going?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Amon_D5_After_SSI"
+              ]
+            }
+          ]
         },
         {
           "id": "Amon_D5_After_SSI",

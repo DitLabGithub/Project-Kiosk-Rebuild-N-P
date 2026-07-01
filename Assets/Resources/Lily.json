@@ -9,21 +9,27 @@
   "height": 167,
   "hairColor": "Red",
   "eyeColor": "Blue",
-
-"ssiProfiles": [
-  {
-    "key": "own",
-    "data": {
-      "avatarPath": "Sprites/Avatars/Lily",
+  "ssiProfiles": {
+    "day4_expired_ssi": {
       "ownerName": "Lily",
+      "ownerSurname": "",
+      "relation": "Self",
       "age": 32,
+      "above18": true,
       "address": "88 Willow Apartments",
-      "personalID": "4928173650",
-      "valid": true
+      "expiryDate": "2024-01-01",
+      "gender": "Female",
+      "height": 167,
+      "hairColor": "Red",
+      "eyeColor": "Blue",
+      "belongsToCustomer": true,
+      "presentWithCustomer": true,
+      "credentialStatus": "Expired",
+      "isUsable": false,
+      "note": "This SSI credential is expired and should not be accepted.",
+      "pID": "123456782"
     }
-  }
-],
-
+  },
   "favouriteItems": [
     "RedWine",
     "SproingelsBlue"
@@ -305,8 +311,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|package",
                   "perfectNode": "Lily_D2_Correct_Info_Response",
-                  "goodNode": "Lily_D2_Close_Response",
-                  "badNode": "Lily_D2_Too_Much_Response"
+                  "moreNode": "Lily_D2_Too_Much_Response",
+                  "lessNode": "Lily_D2_Close_Response"
                 }
               ],
               "requirements": [],
@@ -324,7 +330,7 @@
         },
         {
           "id": "Lily_D2_Close_Response",
-          "text": "Close, but the parcel check is not complete yet. Check the notes and request picture, name, address, and a valid credential.",
+          "text": "That was not enough to complete the parcel check. Request picture, name, address, and a valid credential.",
           "requirements": [],
           "options": [
             {
@@ -334,8 +340,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|package",
                   "perfectNode": "Lily_D2_Correct_Info_Response",
-                  "goodNode": "Lily_D2_Close_Response",
-                  "badNode": "Lily_D2_Too_Much_Response"
+                  "moreNode": "Lily_D2_Too_Much_Response",
+                  "lessNode": "Lily_D2_Close_Response"
                 }
               ],
               "requirements": [],
@@ -378,8 +384,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|package",
                   "perfectNode": "Lily_D2_Correct_Info_Response",
-                  "goodNode": "Lily_D2_Close_Response",
-                  "badNode": "Lily_D2_Too_Much_Response"
+                  "moreNode": "Lily_D2_Too_Much_Response",
+                  "lessNode": "Lily_D2_Close_Response"
                 }
               ],
               "requirements": [],
@@ -461,8 +467,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Lily_D2_RedWine_Age_OK",
-                  "goodNode": "Lily_D2_RedWine_Close",
-                  "badNode": "Lily_D2_RedWine_Age_Bad"
+                  "moreNode": "Lily_D2_RedWine_Age_Bad",
+                  "lessNode": "Lily_D2_RedWine_Close"
                 }
               ],
               "requirements": [],
@@ -480,7 +486,7 @@
         },
         {
           "id": "Lily_D2_RedWine_Close",
-          "text": "Close, but the alcohol check needs picture, above 18, and a valid credential. Try again using only those fields.",
+          "text": "That was not enough to complete the alcohol check. Request picture, above 18, and a valid credential.",
           "requirements": [],
           "options": [
             {
@@ -490,8 +496,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Lily_D2_RedWine_Age_OK",
-                  "goodNode": "Lily_D2_RedWine_Close",
-                  "badNode": "Lily_D2_RedWine_Age_Bad"
+                  "moreNode": "Lily_D2_RedWine_Age_Bad",
+                  "lessNode": "Lily_D2_RedWine_Close"
                 }
               ],
               "requirements": [],
@@ -534,8 +540,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Lily_D2_RedWine_Age_OK",
-                  "goodNode": "Lily_D2_RedWine_Close",
-                  "badNode": "Lily_D2_RedWine_Age_Bad"
+                  "moreNode": "Lily_D2_RedWine_Age_Bad",
+                  "lessNode": "Lily_D2_RedWine_Close"
                 }
               ],
               "requirements": [],
@@ -647,9 +653,9 @@
                   "variable": "open_ssi_tab",
                   "value": "own|package",
                   "perfectNode": "Lily_D4_SSI_Expired",
-                  "goodNode": "Lily_D4_SSI_Expired",
-                  "badNode": "Lily_D4_SSI_Expired",
-                  "ssiProfile": "day4_expired_ssi"
+                  "ssiProfile": "day4_expired_ssi",
+                  "moreNode": "Lily_D4_SSI_Too_Much",
+                  "lessNode": "Lily_D4_SSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -667,7 +673,47 @@
         },
         {
           "id": "Lily_D4_SSI_Expired",
-          "text": "Wait, what do you mean it didn't go through? The name and address are right. Does it say the credential is expired?",
+          "text": "The information request itself was correct, but what do you mean it didn't go through? The name and address are right. Does it say the credential is expired?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Your SSI credential has expired.",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "expired_ssi"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D4_Request_Solution"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D4_SSI_Too_Much",
+          "text": "You requested more information than this parcel pickup needs. The correct fields are picture, name, address, and a valid credential. Does it also say my credential is expired?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Your SSI credential has expired.",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "expired_ssi"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D4_Request_Solution"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D4_SSI_Not_Enough",
+          "text": "That was not enough to complete the parcel check. You need picture, name, address, and a valid credential. Does it also say my credential is expired?",
           "requirements": [],
           "options": [
             {
@@ -1017,8 +1063,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|package",
                   "perfectNode": "Lily_D5_Correct_Info",
-                  "goodNode": "Lily_D5_Too_Much",
-                  "badNode": "Lily_D5_Far_Too_Much"
+                  "moreNode": "Lily_D5_Too_Much",
+                  "lessNode": "Lily_D5_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -1045,8 +1091,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|package",
                   "perfectNode": "Lily_D5_Correct_Info",
-                  "goodNode": "Lily_D5_Too_Much",
-                  "badNode": "Lily_D5_Far_Too_Much"
+                  "moreNode": "Lily_D5_Too_Much",
+                  "lessNode": "Lily_D5_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -1104,7 +1150,7 @@
         },
         {
           "id": "Lily_D5_Too_Much",
-          "text": "That check was close, but it did not match the parcel requirements exactly. Use picture, name, address, and valid credential.",
+          "text": "You requested more information than this parcel pickup needs. Use only picture, name, address, and a valid credential.",
           "requirements": [],
           "options": [
             {
@@ -1135,17 +1181,13 @@
           ]
         },
         {
-          "id": "Lily_D5_Far_Too_Much",
-          "text": "That was far too much information for a parcel pickup. You requested fields this order does not need. Remember that pID is never justified for a normal kiosk order.",
+          "id": "Lily_D5_Not_Enough",
+          "text": "That check was not enough to verify this parcel pickup. You need picture, name, address, and a valid credential.",
           "requirements": [],
           "options": [
             {
               "text": "Hand over the parcel.",
               "effects": [
-                {
-                  "variable": "AskedTooMuch_D5",
-                  "value": "true"
-                },
                 {
                   "variable": "friendship",
                   "value": "-1"
@@ -1159,13 +1201,13 @@
                   "value": "true"
                 },
                 {
-                  "keyMomentText": "Asked Lily for unnecessary data during her final parcel pickup.",
+                  "keyMomentText": "Handed Lily her parcel after an incomplete SSI verification.",
                   "keyMomentPositive": false
                 },
                 {
                   "messageTitle": "Suspicious Activity",
                   "messageSender": "Compliance Office",
-                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                  "messageContent": "A parcel was handed over after an incomplete SSI verification. Please review the recent customer interaction."
                 },
                 {
                   "variable": "open_wares_tab",
@@ -1174,7 +1216,7 @@
               ],
               "requirements": [],
               "nextNodes": [
-                "Lily_D5_Parcel_Given_FarTooMuch"
+                "Lily_D5_Parcel_Given_NotEnough"
               ]
             }
           ]
@@ -1210,8 +1252,8 @@
           ]
         },
         {
-          "id": "Lily_D5_Parcel_Given_FarTooMuch",
-          "text": "Thanks, but that verification was not acceptable. Use the saved order notes and never request pID for a normal kiosk transaction.",
+          "id": "Lily_D5_Parcel_Given_NotEnough",
+          "text": "Thanks, but that verification was incomplete. Check the saved parcel requirements before approving a pickup.",
           "requirements": [],
           "options": [
             {
@@ -1227,26 +1269,5 @@
       ]
     }
   ],
-  "ssiProfiles": {
-    "day4_expired_ssi": {
-      "ownerName": "Lily",
-      "ownerSurname": "",
-      "relation": "Self",
-      "age": 32,
-      "above18": true,
-      "address": "88 Willow Apartments",
-      "expiryDate": "2024-01-01",
-      "gender": "Female",
-      "height": 167,
-      "hairColor": "Red",
-      "eyeColor": "Blue",
-      "belongsToCustomer": true,
-      "presentWithCustomer": true,
-      "credentialStatus": "Expired",
-      "isUsable": false,
-      "note": "This SSI credential is expired and should not be accepted.",
-      "pID": "123456782"
-    }
-  },
   "pID": "123456782"
 }

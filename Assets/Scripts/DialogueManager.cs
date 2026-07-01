@@ -282,10 +282,10 @@ public class DialogueManager : MonoBehaviour
                         .SetupOrders(orders);
 
                     SSIManager.Instance
-                        .SetupResultNodes(
-                            effect.perfectNode,
-                            effect.goodNode,
-                            effect.badNode
+                    .SetupResultNodes(
+                     effect.perfectNode,
+                     effect.moreNode,
+                        effect.lessNode
                         );
 
                     break;

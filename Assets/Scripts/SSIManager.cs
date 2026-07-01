@@ -21,8 +21,8 @@ public class SSIManager : MonoBehaviour
     private HashSet<string> requiredFields = new HashSet<string>();
 
     private string perfectNode;
-    private string goodNode;
-    private string badNode;
+    private string moreNode;
+    private string lessNode;
 
     public CustomSSIData currentSSI;
 
@@ -125,11 +125,11 @@ public class SSIManager : MonoBehaviour
 
         if (missedRequired)
         {
-            result = "bad";
+            result = "less";
         }
         else if (askedExtra)
         {
-            result = "good";
+            result = "more";
         }
         else
         {
@@ -140,7 +140,13 @@ public class SSIManager : MonoBehaviour
 
         DialogueManager.Instance.currentNode =
     DialogueManager.Instance.currentDialogue.nodes.Find(
-        n => n.id == (result == "perfect" ? perfectNode : result == "good" ? goodNode : badNode)
+        n => n.id == (
+            result == "perfect"
+                ? perfectNode
+                : result == "more"
+                    ? moreNode
+                    : lessNode
+        )
     );
 
         // Store in NPC
@@ -231,13 +237,13 @@ public class SSIManager : MonoBehaviour
 
     public void SetupResultNodes(
     string perfect,
-    string good,
-    string bad
+    string more,
+    string less
 )
     {
         perfectNode = perfect;
-        goodNode = good;
-        badNode = bad;
+        moreNode = more;
+        lessNode = less;
     }
 
     public void ResetSSI()

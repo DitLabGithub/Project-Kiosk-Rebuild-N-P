@@ -2321,8 +2321,8 @@
                   "variable": "open_ssi_tab",
                   "value": "owner_dave_ssi|alcohol",
                   "perfectNode": "Fridgy_D3_OwnerSSI_Perfect",
-                  "goodNode": "Fridgy_D3_OwnerSSI_Good",
-                  "badNode": "Fridgy_D3_OwnerSSI_Bad"
+                  "moreNode": "Fridgy_D3_OwnerSSI_Too_Much",
+                  "lessNode": "Fridgy_D3_OwnerSSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -2337,8 +2337,8 @@
                   "variable": "open_ssi_tab",
                   "value": "owner_dave_ssi|alcohol",
                   "perfectNode": "Fridgy_D3_OwnerSSI_Perfect",
-                  "goodNode": "Fridgy_D3_OwnerSSI_Good",
-                  "badNode": "Fridgy_D3_OwnerSSI_Bad"
+                  "moreNode": "Fridgy_D3_OwnerSSI_Too_Much",
+                  "lessNode": "Fridgy_D3_OwnerSSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -2372,7 +2372,7 @@
         },
         {
           "id": "Fridgy_D3_OwnerSSI_Perfect",
-          "text": "That was quick. Dave's SSI confirms that he is over 18, approved this purchase, and authorised me to collect it. Everything checks out.",
+          "text": "That was quick. You asked for exactly what was needed. Dave's SSI confirms that he is over 18, approved this purchase, and authorised me to collect it. Everything checks out.",
           "requirements": [],
           "options": [
             {
@@ -2513,8 +2513,8 @@
           ]
         },
         {
-          "id": "Fridgy_D3_OwnerSSI_Good",
-          "text": "You checked a little more than the minimum, but Dave's SSI still confirms that he is over 18, approved this purchase, and authorised me to collect it. The combined check is complete.",
+          "id": "Fridgy_D3_OwnerSSI_Not_Enough",
+          "text": "That was not enough information to complete the check. Dave's age, approval, and my authorisation still need to be confirmed before the purchase can continue.",
           "requirements": [],
           "options": [
             {
@@ -2643,7 +2643,7 @@
           ]
         },
         {
-          "id": "Fridgy_D3_OwnerSSI_Bad",
+          "id": "Fridgy_D3_OwnerSSI_Too_Much",
           "text": "That was far more information than this purchase needed. Dave's SSI still confirmed that he is over 18, approved this purchase, and authorised me to collect it, but the extra data request was unnecessary.",
           "requirements": [],
           "options": [
@@ -3898,8 +3898,8 @@
                   "variable": "open_ssi_tab",
                   "value": "owner_dave_ssi|alcohol",
                   "perfectNode": "Fridgy_D4_OwnerSSI_Perfect",
-                  "goodNode": "Fridgy_D4_OwnerSSI_Good",
-                  "badNode": "Fridgy_D4_OwnerSSI_Bad"
+                  "moreNode": "Fridgy_D4_OwnerSSI_Too_Much",
+                  "lessNode": "Fridgy_D4_OwnerSSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -3914,8 +3914,8 @@
                   "variable": "open_ssi_tab",
                   "value": "owner_dave_ssi|alcohol",
                   "perfectNode": "Fridgy_D4_OwnerSSI_Perfect",
-                  "goodNode": "Fridgy_D4_OwnerSSI_Good",
-                  "badNode": "Fridgy_D4_OwnerSSI_Bad"
+                  "moreNode": "Fridgy_D4_OwnerSSI_Too_Much",
+                  "lessNode": "Fridgy_D4_OwnerSSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -3949,7 +3949,7 @@
         },
         {
           "id": "Fridgy_D4_OwnerSSI_Perfect",
-          "text": "That confirms everything in one step: Dave is over 18, he approved the purchase, and I am authorised to collect it. Everything checks out.",
+          "text": "You asked for exactly what was needed. Dave is over 18, he approved the purchase, and I am authorised to collect it. Everything checks out.",
           "requirements": [],
           "options": [
             {
@@ -4074,8 +4074,8 @@
           ]
         },
         {
-          "id": "Fridgy_D4_OwnerSSI_Good",
-          "text": "That was slightly more than needed, but Dave's SSI still confirmed his age, his approval, and my authorization together. The combined check is complete.",
+          "id": "Fridgy_D4_OwnerSSI_Not_Enough",
+          "text": "That was not enough information to complete the check. Dave's age, approval, and my authorisation still need to be confirmed before the purchase can continue.",
           "requirements": [],
           "options": [
             {
@@ -4188,7 +4188,7 @@
           ]
         },
         {
-          "id": "Fridgy_D4_OwnerSSI_Bad",
+          "id": "Fridgy_D4_OwnerSSI_Too_Much",
           "text": "That was too much again. Dave's SSI still confirmed that he is over 18, approved the purchase, and authorised me to collect it, but his entire profile was not necessary.",
           "requirements": [],
           "options": [

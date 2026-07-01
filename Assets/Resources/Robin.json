@@ -9,35 +9,33 @@
   "height": 176,
   "hairColor": "Black",
   "eyeColor": "Brown",
- 
- "ssiProfiles": [
-  {
-    "key": "own",
-    "data": {
-      "avatarPath": "Sprites/Avatars/Robin",
-      "ownerName": "Robin",
-      "age": 29,
-      "address": "19 Market District",
-      "personalID": "8394726105",
-      "valid": true
+  "ssiProfiles": [
+    {
+      "key": "own",
+      "data": {
+        "avatarPath": "Sprites/Avatars/Robin",
+        "ownerName": "Robin",
+        "age": 29,
+        "address": "19 Market District",
+        "personalID": "8394726105",
+        "valid": true
+      }
+    },
+    {
+      "key": "day4_husband_ssi",
+      "data": {
+        "avatarPath": "Sprites/Avatars/RobinHusband",
+        "ownerName": "Mark Vermeer",
+        "age": 31,
+        "address": "19 Market District",
+        "personalID": "5271938460",
+        "valid": true
+      }
     }
-  },
-  {
-    "key": "day4_husband_ssi",
-    "data": {
-      "avatarPath": "Sprites/Avatars/RobinHusband",
-      "ownerName": "Mark Vermeer",
-      "age": 31,
-      "address": "19 Market District",
-      "personalID": "5271938460",
-      "valid": true
-    }
-  }
-],
-
+  ],
   "favouriteItems": [
     "Rambolos",
-    "Blueports" 
+    "Blueports"
   ],
   "details": [
     {
@@ -304,34 +302,34 @@
             {
               "text": "I can sell you the Rambolos. Would you like Blueports too, right?",
               "effects": [
-  {
-    "variable": "open_wares_tab",
-    "value": "Rambolos"
-  },
-  {
-    "variable": "friendship",
-    "value": "1"
-  },
-  {
-    "variable": "lawfulness",
-    "value": "1"
-  },
-  {
-    "variable": "UpsoldNumber",
-    "value": "1"
-  },
-  {
-    "variable": "SoldCigarettes_D2",
-    "value": "true"
-  },
-  {
-    "variable": "unlock_detail",
-    "value": "favorite_items"
-  },
-  {
-    "keyMomentText": "Used traditional ID to verify Robin was over 18, sold Rambolos, and recommended Blueport as an upsell.",
-    "keyMomentPositive": true
-  }
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Rambolos"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "UpsoldNumber",
+                  "value": "1"
+                },
+                {
+                  "variable": "SoldCigarettes_D2",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "favorite_items"
+                },
+                {
+                  "keyMomentText": "Used traditional ID to verify Robin was over 18, sold Rambolos, and recommended Blueport as an upsell.",
+                  "keyMomentPositive": true
+                }
               ],
               "requirements": [],
               "nextNodes": [
@@ -548,8 +546,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Robin_D3_SSI_Correct",
-                  "goodNode": "Robin_D3_SSI_Close",
-                  "badNode": "Robin_D3_SSI_TooMuch"
+                  "moreNode": "Robin_D3_SSI_Too_Much",
+                  "lessNode": "Robin_D3_SSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -586,17 +584,13 @@
           ]
         },
         {
-          "id": "Robin_D3_SSI_Close",
-          "text": "Wait, did you need all of that? Maybe it's okay, I'm still learning, but I thought this was supposed to be minimal.",
+          "id": "Robin_D3_SSI_Not_Enough",
+          "text": "Wait, did you check everything you needed? It looked like some information was missing... but maybe I'm wrong.",
           "requirements": [],
           "options": [
             {
               "text": "Continue.",
               "effects": [
-                {
-                  "variable": "AskedTooMuch_D3",
-                  "value": "true"
-                },
                 {
                   "variable": "unlock_detail",
                   "value": "data_curiosity"
@@ -610,8 +604,8 @@
           ]
         },
         {
-          "id": "Robin_D3_SSI_TooMuch",
-          "text": "Are you sure you only took what was necessary? This feels like the old system again, just with a nicer screen.",
+          "id": "Robin_D3_SSI_Too_Much",
+          "text": "Did you really need all of that? It felt like more information than this age check needed... but, well, okay.",
           "requirements": [],
           "options": [
             {
@@ -976,8 +970,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Robin_D4_RobinSSI_Correct",
-                  "goodNode": "Robin_D4_RobinSSI_Close",
-                  "badNode": "Robin_D4_RobinSSI_TooMuch"
+                  "moreNode": "Robin_D4_RobinSSI_Too_Much",
+                  "lessNode": "Robin_D4_RobinSSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -1014,17 +1008,13 @@
           ]
         },
         {
-          "id": "Robin_D4_RobinSSI_Close",
-          "text": "Are you sure you only needed that much? I don't know, maybe I'm overthinking it.",
+          "id": "Robin_D4_RobinSSI_Not_Enough",
+          "text": "Did you check everything you needed? It seemed like something was missing, but... maybe I'm overthinking it.",
           "requirements": [],
           "options": [
             {
               "text": "Continue.",
               "effects": [
-                {
-                  "variable": "AskedTooMuch_D4",
-                  "value": "true"
-                },
                 {
                   "variable": "unlock_detail",
                   "value": "data_curiosity"
@@ -1038,8 +1028,8 @@
           ]
         },
         {
-          "id": "Robin_D4_RobinSSI_TooMuch",
-          "text": "That felt like a lot. Isn't the whole point that I don't have to give every piece of myself away?",
+          "id": "Robin_D4_RobinSSI_Too_Much",
+          "text": "That felt like more information than this age check needed. Isn't the whole point that I don't have to give every piece of myself away?",
           "requirements": [],
           "options": [
             {
@@ -1168,8 +1158,8 @@
                   "variable": "open_ssi_tab",
                   "value": "own|alcohol",
                   "perfectNode": "Robin_D4_RobinSSI_Correct",
-                  "goodNode": "Robin_D4_RobinSSI_Close",
-                  "badNode": "Robin_D4_RobinSSI_TooMuch"
+                  "moreNode": "Robin_D4_RobinSSI_Too_Much",
+                  "lessNode": "Robin_D4_RobinSSI_Not_Enough"
                 }
               ],
               "requirements": [],
@@ -1279,11 +1269,11 @@
               "text": "I'll need his SSI then.",
               "effects": [
                 {
-                   "variable": "open_ssi_tab",
+                  "variable": "open_ssi_tab",
                   "value": "day4_husband_ssi|alcohol",
                   "perfectNode": "Robin_D4_HusbandSSI_Correct",
-                  "goodNode": "Robin_D4_HusbandSSI_Close",
-                  "badNode": "Robin_D4_HusbandSSI_TooMuch"
+                  "moreNode": "Robin_D4_HusbandSSI_Too_Much",
+                  "lessNode": "Robin_D4_HusbandSSI_Not_Enough"
                 },
                 {
                   "variable": "ScannedHusbandSSI_D4",
@@ -1328,17 +1318,13 @@
           ]
         },
         {
-          "id": "Robin_D4_HusbandSSI_Close",
-          "text": "Did you need all of that from him? Maybe you did, I don't know. I'm still learning what should be normal here.",
+          "id": "Robin_D4_HusbandSSI_Not_Enough",
+          "text": "Did you check everything you needed from him? It looked incomplete, but maybe I'm misunderstanding how this works.",
           "requirements": [],
           "options": [
             {
               "text": "Alright, let's check it.",
               "effects": [
-                {
-                  "variable": "AskedTooMuch_D4",
-                  "value": "true"
-                },
                 {
                   "variable": "unlock_detail",
                   "value": "data_curiosity"
@@ -1352,8 +1338,8 @@
           ]
         },
         {
-          "id": "Robin_D4_HusbandSSI_TooMuch",
-          "text": "That looked like a lot of information for one age check. Are you sure that was necessary?",
+          "id": "Robin_D4_HusbandSSI_Too_Much",
+          "text": "That looked like more information than one age check needed. Are you sure all of that was necessary?",
           "requirements": [],
           "options": [
             {
